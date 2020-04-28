@@ -18,11 +18,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
-                                <rect key="frame" x="34" y="52" width="307" height="299"/>
+                                <rect key="frame" x="34" y="52" width="307" height="319"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
@@ -48,6 +48,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="5zl-KV-7Kf" kind="showDetail" id="mIv-TF-x22"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPh-Pe-hC9">
                                 <rect key="frame" x="34" y="547" width="307" height="30"/>
@@ -58,9 +61,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cke-Mq-cP6" kind="popoverPresentation" popoverAnchorView="yPh-Pe-hC9" id="84U-Ap-HSA">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="cke-Mq-cP6" kind="showDetail" id="84U-Ap-HSA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xdL-wM-duP">
@@ -72,9 +73,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gYM-NI-Kaz" kind="popoverPresentation" popoverAnchorView="xdL-wM-duP" id="Zox-47-Kap">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="gYM-NI-Kaz" kind="showDetail" id="Zox-47-Kap"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +86,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="129.08545727136433"/>
+        </scene>
+        <!--Restaurant-->
+        <scene sceneID="Ano-zO-Koy">
+            <objects>
+                <viewController storyboardIdentifier="restaurant" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BHS-3O-Qmy" customClass="RestaurantViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rce-jI-CVb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CA8-7t-iAx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="info.circle.fill" catalog="system" id="iLg-kJ-a1D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S69-jd-bFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="128"/>
+        </scene>
+        <!--Parking-->
+        <scene sceneID="N9E-kp-ORP">
+            <objects>
+                <viewController storyboardIdentifier="parking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u8x-rE-dsn" customClass="ParkingViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="parking" id="Y30-NZ-uiS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Yaz-j6-Jrx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMP-HB-3jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="-538"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ELr-iF-Y6w">
+            <objects>
+                <tabBarController storyboardIdentifier="barcontroller" id="5zl-KV-7Kf" customClass="TabBarController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DT5-20-mSs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="u8x-rE-dsn" kind="relationship" relationship="viewControllers" id="gHH-G9-383"/>
+                        <segue destination="BHS-3O-Qmy" kind="relationship" relationship="viewControllers" id="Aj1-oy-QTJ"/>
+                        <segue destination="h0P-6I-BHd" kind="relationship" relationship="viewControllers" id="pWf-O4-EUH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2V7-mw-4Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="129"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="h7o-g4-B7y">
@@ -124,24 +175,32 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TYa-3d-7IO">
-                                <rect key="frame" x="34" y="547" width="307" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DWm-46-YlA"/>
                     </view>
+                    <navigationItem key="navigationItem" id="bQB-k2-H7Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="811"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="9uM-oL-1H0">
+            <objects>
+                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h0P-6I-BHd" customClass="SettingsViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOx-RY-z6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-2y-MfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="811"/>
         </scene>
         <!--Reset View Controller-->
         <scene sceneID="J2n-3D-AcQ">
@@ -163,18 +222,6 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cR9-yu-7wT">
-                                <rect key="frame" x="34" y="509" width="307" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="yQq-MU-GS0"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W1A-HT-yCQ">
                                 <rect key="frame" x="34" y="471" width="307" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
@@ -189,6 +236,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RpV-qc-VI8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jda-aN-qID"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-aS-R5c" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +244,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logo_mycampus" width="1492" height="319"/>
+        <image name="wrench.fill" catalog="system" width="128" height="120"/>
         <namedColor name="PrimaryDarkBlue">
             <color red="0.075000002980232239" green="0.16899999976158142" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
