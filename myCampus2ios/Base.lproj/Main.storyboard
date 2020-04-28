@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -94,7 +94,7 @@
                     <view key="view" contentMode="scaleToFill" id="Rce-jI-CVb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <viewLayoutGuide key="safeArea" id="CA8-7t-iAx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Restaurant" image="info.circle.fill" catalog="system" id="iLg-kJ-a1D"/>
@@ -110,7 +110,7 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="parking" id="Y30-NZ-uiS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <viewLayoutGuide key="safeArea" id="Yaz-j6-Jrx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
@@ -122,12 +122,15 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ELr-iF-Y6w">
             <objects>
-                <tabBarController storyboardIdentifier="barcontroller" id="5zl-KV-7Kf" customClass="TabBarController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="barcontroller" extendedLayoutIncludesOpaqueBars="YES" id="5zl-KV-7Kf" customClass="TabBarController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DT5-20-mSs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
-                        <color key="tintColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" name="PrimaryDarkBlue"/>
+                        <color key="barTintColor" name="PrimaryDarkBlue"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="u8x-rE-dsn" kind="relationship" relationship="viewControllers" id="gHH-G9-383"/>
@@ -193,10 +196,10 @@
                     <view key="view" contentMode="scaleToFill" id="gOx-RY-z6t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-2y-MfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
