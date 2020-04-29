@@ -60,5 +60,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
+=======
+	<key>UIAppFonts</key>
+	<array>
+		<string>roboto_light.ttf</string>
+	</array>
+>>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 </dict>
 </plist>
