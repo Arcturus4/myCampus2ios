@@ -136,18 +136,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
-                                <rect key="frame" x="16" y="20" width="343" height="176"/>
+                                <rect key="frame" x="16" y="61" width="343" height="176"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Smj-rq-34n">
+                                        <rect key="frame" x="146" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" name="PrimaryBlue"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Tw-xuV">
-                                <rect key="frame" x="16" y="204" width="343" height="176"/>
+                                <rect key="frame" x="16" y="245" width="343" height="176"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZ1-xh-Gbm">
+                                        <rect key="frame" x="146" y="64" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" name="PrimaryBlue"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-gI-XhQ">
-                                <rect key="frame" x="16" y="388" width="343" height="176"/>
+                                <rect key="frame" x="16" y="429" width="343" height="176"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-bF-TCD">
+                                        <rect key="frame" x="146" y="63" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" name="PrimaryBlue"/>
                             </view>
                         </subviews>
@@ -156,9 +183,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
                     <connections>
-                        <outlet property="ParkingP10Inside" destination="uz2-Tw-xuV" id="jeh-1H-yod"/>
-                        <outlet property="ParkingP10Top" destination="5vH-G3-4tO" id="ANJ-jm-V69"/>
-                        <outlet property="ParkingP5" destination="DCU-gI-XhQ" id="0Ub-vc-yYz"/>
+                        <outlet property="P10InsLabel" destination="LZ1-xh-Gbm" id="xq6-6m-C4U"/>
+                        <outlet property="P10TLabel" destination="Smj-rq-34n" id="Ud1-0g-ole"/>
+                        <outlet property="P5Label" destination="UqN-bF-TCD" id="Cv0-Bt-DlQ"/>
+                        <outlet property="ParkingP10Inside" destination="uz2-Tw-xuV" id="VBd-hH-7Dk"/>
+                        <outlet property="ParkingP10Top" destination="5vH-G3-4tO" id="EY9-XN-jWk"/>
+                        <outlet property="ParkingP5" destination="DCU-gI-XhQ" id="chV-Gq-Whz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMP-HB-3jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
