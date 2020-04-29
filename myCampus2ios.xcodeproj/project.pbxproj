@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A3DD8612458A2C900E98480 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3DD8602458A2C900E98480 /* APIService.swift */; };
 		6A9787BC24578DFC00B8F4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */; };
 		6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */; };
 		6A9787C024578DFC00B8F4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BF24578DFC00B8F4B8 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A3DD8602458A2C900E98480 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6A9787B824578DFC00B8F4B8 /* myCampus2ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCampus2ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				6A9787C924578DFE00B8F4B8 /* LaunchScreen.storyboard */,
 				6A9787CC24578DFE00B8F4B8 /* Info.plist */,
 				6A9787C424578DFC00B8F4B8 /* myCampus2ios.xcdatamodeld */,
+				6A3DD8602458A2C900E98480 /* APIService.swift */,
 			);
 			path = myCampus2ios;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A9787C024578DFC00B8F4B8 /* ViewController.swift in Sources */,
+				6A3DD8612458A2C900E98480 /* APIService.swift in Sources */,
 				6A9787C624578DFC00B8F4B8 /* myCampus2ios.xcdatamodeld in Sources */,
 				6A9787BC24578DFC00B8F4B8 /* AppDelegate.swift in Sources */,
 				6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */,
