@@ -14,42 +14,19 @@ class ParkingViewController: UIViewController {
     @IBOutlet weak var ParkingP10Inside: UIView!
     @IBOutlet weak var ParkingP5: UIView!
     
+    @IBOutlet weak var P10TLabel: UILabel!
+    @IBOutlet weak var P10InsLabel: UILabel!
+    @IBOutlet weak var P5Label: UILabel!
+    
     var p10TopUsage = 0.92
     var p10InsideUsage = 0.34
     var p5usage = 0.73
     
-
-
-    let p10TopPercentageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Usage"
-        label.textAlignment = NSTextAlignment.center
-        return label
-    }()
-    
-    let p10InsidePercentageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Usage"
-        label.textAlignment = NSTextAlignment.center
-        return label
-    }()
-
-    let p5PercentageLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Usage"
-        label.textAlignment = NSTextAlignment.center
-        return label
-    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Parking P10 Percentages
         
-        ParkingP10Top.addSubview(p10TopPercentageLabel)
-        p10TopPercentageLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        p10TopPercentageLabel.center = ParkingP10Top.center
-        p10TopPercentageLabel.textColor = .white
-
         let circularPath = UIBezierPath(arcCenter: ParkingP10Top.center, radius: 50, startAngle: -.pi  / 2, endAngle: 3 * .pi / 2, clockwise: true)
             
         let shapeLayerP10Top = CAShapeLayer()
@@ -64,6 +41,8 @@ class ParkingViewController: UIViewController {
         
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         
+        P10TLabel.text = "\(Double(p10TopUsage))%"
+        P10TLabel.textAlignment = .center
         basicAnimation.toValue = p10TopUsage
         basicAnimation.duration = 2
         
@@ -72,12 +51,8 @@ class ParkingViewController: UIViewController {
         
         shapeLayerP10Top.add(basicAnimation, forKey: "parking1oTop")
         
-        // Parking P10 Inside Percentage
         
-        ParkingP10Inside.addSubview(p10InsidePercentageLabel)
-        p10InsidePercentageLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        p10InsidePercentageLabel.center = ParkingP10Inside.center
-        p10InsidePercentageLabel.textColor = .white
+        // Parking P10 Inside Percentage
         
         let p10InsideCircularPath = UIBezierPath(arcCenter: ParkingP10Inside.center, radius: 50, startAngle: -.pi  / 2, endAngle: 3 * .pi / 2, clockwise: true)
                 
@@ -93,6 +68,8 @@ class ParkingViewController: UIViewController {
         
         let p10InsideBasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         
+        P10InsLabel.text = "\(Double(p10InsideUsage))%"
+        P10InsLabel.textAlignment = .center
         p10InsideBasicAnimation.toValue = p10InsideUsage
         p10InsideBasicAnimation.duration = 2
         
@@ -104,11 +81,6 @@ class ParkingViewController: UIViewController {
         
         // Parking P5 Animation
         
-        ParkingP5.addSubview(p5PercentageLabel)
-              p5PercentageLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-              p5PercentageLabel.center = ParkingP5.center
-              p5PercentageLabel.textColor = .white
-              
               let p5CircularPath = UIBezierPath(arcCenter: ParkingP5.center, radius: 50, startAngle: -.pi  / 2, endAngle: 3 * .pi / 2, clockwise: true)
                       
               let shapeLayerP5 = CAShapeLayer()
@@ -122,7 +94,10 @@ class ParkingViewController: UIViewController {
               view.layer.addSublayer(shapeLayerP5)
               
               let p5BasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
-              
+        
+        
+              P5Label.text = "\(Double(p5usage))%"
+              P5Label.textAlignment = .center
               p5BasicAnimation.toValue = p5usage
               p5BasicAnimation.duration = 2
               
