@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		6A3DD8612458A2C900E98480 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3DD8602458A2C900E98480 /* APIService.swift */; };
-=======
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 		6A9787BC24578DFC00B8F4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */; };
 		6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */; };
 		6A9787C024578DFC00B8F4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BF24578DFC00B8F4B8 /* ViewController.swift */; };
@@ -20,8 +16,6 @@
 		6A9787CB24578DFE00B8F4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9787C924578DFE00B8F4B8 /* LaunchScreen.storyboard */; };
 		6A9787D624578DFE00B8F4B8 /* myCampus2iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787D524578DFE00B8F4B8 /* myCampus2iosTests.swift */; };
 		6A9787E124578DFE00B8F4B8 /* myCampus2iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787E024578DFE00B8F4B8 /* myCampus2iosUITests.swift */; };
-<<<<<<< HEAD
-=======
 		8D52068F2458B14A00CE1E9F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52068E2458B14A00CE1E9F /* TabBarController.swift */; };
 		8D5206912458B90800CE1E9F /* ParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5206902458B90800CE1E9F /* ParkingViewController.swift */; };
 		8D5206932458B91600CE1E9F /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5206922458B91600CE1E9F /* RestaurantViewController.swift */; };
@@ -30,7 +24,6 @@
 		8D56C3E62458ABC700E7F1D2 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C3E52458ABC700E7F1D2 /* ResetViewController.swift */; };
 		8D56C3E82458AC5600E7F1D2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C3E72458AC5600E7F1D2 /* RegisterViewController.swift */; };
 		8D56C3EA2458AC6F00E7F1D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D56C3E92458AC6F00E7F1D2 /* LoginViewController.swift */; };
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-		6A3DD8602458A2C900E98480 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-=======
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 		6A9787B824578DFC00B8F4B8 /* myCampus2ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCampus2ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +59,6 @@
 		6A9787DC24578DFE00B8F4B8 /* myCampus2iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myCampus2iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9787E024578DFE00B8F4B8 /* myCampus2iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCampus2iosUITests.swift; sourceTree = "<group>"; };
 		6A9787E224578DFE00B8F4B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
 		8D52068E2458B14A00CE1E9F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		8D5206902458B90800CE1E9F /* ParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingViewController.swift; sourceTree = "<group>"; };
 		8D5206922458B91600CE1E9F /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +67,6 @@
 		8D56C3E52458ABC700E7F1D2 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		8D56C3E72458AC5600E7F1D2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8D56C3E92458AC6F00E7F1D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,17 +117,6 @@
 		6A9787BA24578DFC00B8F4B8 /* myCampus2ios */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */,
-				6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */,
-				6A9787BF24578DFC00B8F4B8 /* ViewController.swift */,
-				6A9787C124578DFC00B8F4B8 /* Main.storyboard */,
-				6A9787C724578DFE00B8F4B8 /* Assets.xcassets */,
-				6A9787C924578DFE00B8F4B8 /* LaunchScreen.storyboard */,
-				6A9787CC24578DFE00B8F4B8 /* Info.plist */,
-				6A9787C424578DFC00B8F4B8 /* myCampus2ios.xcdatamodeld */,
-				6A3DD8602458A2C900E98480 /* APIService.swift */,
-=======
 				6A9787C724578DFE00B8F4B8 /* Assets.xcassets */,
 				6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */,
 				6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */,
@@ -158,7 +133,6 @@
 				8D56C3E92458AC6F00E7F1D2 /* LoginViewController.swift */,
 				6A9787C424578DFC00B8F4B8 /* myCampus2ios.xcdatamodeld */,
 				6A9787CC24578DFE00B8F4B8 /* Info.plist */,
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 			);
 			path = myCampus2ios;
 			sourceTree = "<group>";
@@ -181,8 +155,6 @@
 			path = myCampus2iosUITests;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
 		8D56C3D824587AB800E7F1D2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +163,6 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,10 +270,7 @@
 				6A9787CB24578DFE00B8F4B8 /* LaunchScreen.storyboard in Resources */,
 				6A9787C824578DFE00B8F4B8 /* Assets.xcassets in Resources */,
 				6A9787C324578DFC00B8F4B8 /* Main.storyboard in Resources */,
-<<<<<<< HEAD
-=======
 				8D56C3DF24587AB800E7F1D2 /* roboto_light.ttf in Resources */,
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,13 +295,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				6A9787C024578DFC00B8F4B8 /* ViewController.swift in Sources */,
-				6A3DD8612458A2C900E98480 /* APIService.swift in Sources */,
-				6A9787C624578DFC00B8F4B8 /* myCampus2ios.xcdatamodeld in Sources */,
-				6A9787BC24578DFC00B8F4B8 /* AppDelegate.swift in Sources */,
-				6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */,
-=======
 				8D56C3EA2458AC6F00E7F1D2 /* LoginViewController.swift in Sources */,
 				8D5206932458B91600CE1E9F /* RestaurantViewController.swift in Sources */,
 				8D5206952458B91E00CE1E9F /* SettingsViewController.swift in Sources */,
@@ -345,7 +306,6 @@
 				6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */,
 				8D56C3E62458ABC700E7F1D2 /* ResetViewController.swift in Sources */,
 				8D5206912458B90800CE1E9F /* ParkingViewController.swift in Sources */,
->>>>>>> 00523bc296f52967a9a6ebe721d4cbb6e3a8cd20
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
