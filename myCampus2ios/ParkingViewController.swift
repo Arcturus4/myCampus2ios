@@ -10,10 +10,36 @@ import UIKit
 
 class ParkingViewController: UIViewController {
     
+            
+    let shapeLayer = CAShapeLayer()
+
+    var usageProgress = 0.85
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let center = view.center
+        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -.pi  / 2, endAngle: 3 * .pi / 2, clockwise: true)
+        
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = 10
+        shapeLayer.strokeEnd = 0
+        shapeLayer.lineCap = .round
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+        view.layer.addSublayer(shapeLayer)
+        
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        basicAnimation.toValue = usageProgress
+        basicAnimation.duration = 2
+        
+        basicAnimation.fillMode = .forwards
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "parking1")
+        
         
     }
     
