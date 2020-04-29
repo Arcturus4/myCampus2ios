@@ -10,14 +10,26 @@ import UIKit
 
 class ParkingViewController: UIViewController {
     
+    var usageProgress = 0.92
             
     let shapeLayer = CAShapeLayer()
 
-    var usageProgress = 0.85
+    let percentageLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Usage"
+        label.textAlignment = .center
+        return label
+    }()
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.addSubview(percentageLabel)
+        percentageLabel.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        percentageLabel.center = view.center
+        
         let center = view.center
         let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -.pi  / 2, endAngle: 3 * .pi / 2, clockwise: true)
         
