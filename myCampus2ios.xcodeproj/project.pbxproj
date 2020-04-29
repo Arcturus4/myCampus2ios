@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A3DD8632459CAC100E98480 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A3DD8622459CAC100E98480 /* Default-568h@2x.png */; };
 		6A9787BC24578DFC00B8F4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */; };
 		6A9787BE24578DFC00B8F4B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */; };
 		6A9787C024578DFC00B8F4B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9787BF24578DFC00B8F4B8 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A3DD8622459CAC100E98480 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6A9787B824578DFC00B8F4B8 /* myCampus2ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCampus2ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9787BB24578DFC00B8F4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A9787BD24578DFC00B8F4B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		6A9787AF24578DFC00B8F4B8 = {
 			isa = PBXGroup;
 			children = (
+				6A3DD8622459CAC100E98480 /* Default-568h@2x.png */,
 				6A9787BA24578DFC00B8F4B8 /* myCampus2ios */,
 				6A9787D424578DFE00B8F4B8 /* myCampus2iosTests */,
 				6A9787DF24578DFE00B8F4B8 /* myCampus2iosUITests */,
@@ -270,6 +273,7 @@
 				6A9787CB24578DFE00B8F4B8 /* LaunchScreen.storyboard in Resources */,
 				6A9787C824578DFE00B8F4B8 /* Assets.xcassets in Resources */,
 				6A9787C324578DFC00B8F4B8 /* Main.storyboard in Resources */,
+				6A3DD8632459CAC100E98480 /* Default-568h@2x.png in Resources */,
 				8D56C3DF24587AB800E7F1D2 /* roboto_light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
