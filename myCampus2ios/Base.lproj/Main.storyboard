@@ -111,7 +111,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
+                            <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
                                 <rect key="frame" x="16" y="20" width="343" height="176"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="PrimaryBlue"/>
@@ -131,6 +131,11 @@
                         <viewLayoutGuide key="safeArea" id="Yaz-j6-Jrx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
+                    <connections>
+                        <outlet property="ParkingP10Inside" destination="uz2-Tw-xuV" id="jeh-1H-yod"/>
+                        <outlet property="ParkingP10Top" destination="5vH-G3-4tO" id="ANJ-jm-V69"/>
+                        <outlet property="ParkingP5" destination="DCU-gI-XhQ" id="0Ub-vc-yYz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMP-HB-3jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

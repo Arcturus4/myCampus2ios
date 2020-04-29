@@ -123,7 +123,6 @@
 				6A9787C124578DFC00B8F4B8 /* Main.storyboard */,
 				6A9787C924578DFE00B8F4B8 /* LaunchScreen.storyboard */,
 				8D56C3D824587AB800E7F1D2 /* fonts */,
-				8D580B3C2459A9B500237857 /* ParkingPercentages */,
 				6A9787BF24578DFC00B8F4B8 /* ViewController.swift */,
 				8D52068E2458B14A00CE1E9F /* TabBarController.swift */,
 				8D5206902458B90800CE1E9F /* ParkingViewController.swift */,
@@ -162,13 +161,6 @@
 				8D56C3DA24587AB800E7F1D2 /* roboto_light.ttf */,
 			);
 			path = fonts;
-			sourceTree = "<group>";
-		};
-		8D580B3C2459A9B500237857 /* ParkingPercentages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ParkingPercentages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
