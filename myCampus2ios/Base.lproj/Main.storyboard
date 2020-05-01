@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,6 +77,13 @@
                                     <segue destination="gYM-NI-Kaz" kind="showDetail" id="Zox-47-Kap"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-mB-H8j">
+                                <rect key="frame" x="34" y="379" width="307" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,13 +91,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="6iV-fu-eoZ"/>
                     <connections>
+                        <outlet property="loginButton" destination="VGT-Ew-NG9" id="pq9-uB-ps6"/>
                         <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
                         <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
+                        <outlet property="validText" destination="Fch-mB-H8j" id="s3P-It-VeQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="129.08545727136433"/>
+            <point key="canvasLocation" x="184.80000000000001" y="89.505247376311857"/>
         </scene>
         <!--Restaurant-->
         <scene sceneID="Ano-zO-Koy">
@@ -315,10 +324,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
         <image name="logo_mycampus" width="1492" height="319"/>
-        <image name="wrench.fill" catalog="system" width="128" height="120"/>
+        <image name="wrench.fill" catalog="system" width="64" height="60"/>
         <namedColor name="PrimaryBlue">
             <color red="0.093999996781349182" green="0.21199999749660492" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
