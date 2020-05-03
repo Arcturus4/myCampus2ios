@@ -1,16 +1,20 @@
 PODS:
+  - AMProgressBar (0.1.0)
   - MBCircularProgressBar (0.3.5)
 
 DEPENDENCIES:
+  - AMProgressBar
   - MBCircularProgressBar
 
 SPEC REPOS:
   trunk:
+    - AMProgressBar
     - MBCircularProgressBar
 
 SPEC CHECKSUMS:
+  AMProgressBar: 3f4671c4af4cb4fc9864ddc0a688450c8c7d1561
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
 
-PODFILE CHECKSUM: 7d594b443cd0ebbb8de400b4e7d7554b8335e080
+PODFILE CHECKSUM: cc56ac96f02276fad2e359379590435a0308a448
 
 COCOAPODS: 1.9.1

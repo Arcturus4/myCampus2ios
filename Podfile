@@ -7,6 +7,7 @@ target 'myCampus2ios' do
 
   # Pods for myCampus2ios
 pod "MBCircularProgressBar"
+pod "AMProgressBar"
 
   target 'myCampus2iosTests' do
     inherit! :search_paths

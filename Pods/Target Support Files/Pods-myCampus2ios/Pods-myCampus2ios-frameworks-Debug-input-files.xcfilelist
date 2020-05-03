@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-myCampus2ios/Pods-myCampus2ios-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AMProgressBar/AMProgressBar.framework
 ${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework

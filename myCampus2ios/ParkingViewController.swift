@@ -42,12 +42,24 @@ class ParkingViewController: UIViewController {
         self.ParkingP10InsideProgress.value = 0
         self.ParkingElectricProgress.value = 0
         
+        ParkingP5.layer.cornerRadius = 10
+        ParkingP5.layer.masksToBounds = true
+        
+        ParkingP10Top.layer.cornerRadius = 10
+        ParkingP10Top.layer.masksToBounds = true
+        
+        ParkingP10Inside.layer.cornerRadius = 10
+        ParkingP10Inside.layer.masksToBounds = true
+        
+        ParkingElectric.layer.cornerRadius = 10
+        ParkingElectric.layer.masksToBounds = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         //Animate Progresses
-        UIView.animate(withDuration: 5) {
+        UIView.animate(withDuration: 2) {
             self.ParkinP5Progress.value = CGFloat(self.P5Progress)
             self.ParkingP10TopProgress.value = CGFloat(self.p10TopProgress)
             self.ParkingP10InsideProgress.value = CGFloat(self.P10InsideProgress)
