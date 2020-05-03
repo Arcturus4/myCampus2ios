@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -18,11 +18,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
-                                <rect key="frame" x="34" y="52" width="307" height="319"/>
+                                <rect key="frame" x="34" y="52" width="307" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
@@ -92,7 +92,7 @@
             <objects>
                 <viewController storyboardIdentifier="restaurant" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BHS-3O-Qmy" customClass="RestaurantViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rce-jI-CVb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <viewLayoutGuide key="safeArea" id="CA8-7t-iAx"/>
@@ -108,68 +108,292 @@
             <objects>
                 <viewController storyboardIdentifier="parking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u8x-rE-dsn" customClass="ParkingViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="parking" id="Y30-NZ-uiS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
-                                <rect key="frame" x="16" y="61" width="343" height="176"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-jI-IVT">
+                                <rect key="frame" x="20" y="64" width="335" height="645"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Smj-rq-34n">
-                                        <rect key="frame" x="146" y="64" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-gI-XhQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="153.66666666666666"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-D1-xZl" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-v2-mFt">
+                                                <rect key="frame" x="120" y="8.0000000000000018" width="95" height="23.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="bottom" secondItem="QeA-D1-xZl" secondAttribute="bottom" id="8gC-lb-uRa"/>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="trailing" secondItem="ecd-v2-mFt" secondAttribute="trailing" constant="120" id="NHA-ND-QNN"/>
+                                            <constraint firstItem="QeA-D1-xZl" firstAttribute="top" secondItem="hcT-w3-DAI" secondAttribute="top" constant="35" id="QfU-MC-cby"/>
+                                            <constraint firstItem="QeA-D1-xZl" firstAttribute="leading" secondItem="hcT-w3-DAI" secondAttribute="leading" constant="100" id="d1T-Lf-7nM"/>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="trailing" secondItem="QeA-D1-xZl" secondAttribute="trailing" constant="100" id="itG-Ru-VUs"/>
+                                            <constraint firstItem="ecd-v2-mFt" firstAttribute="top" secondItem="hcT-w3-DAI" secondAttribute="top" constant="8" id="mgA-0p-n8b"/>
+                                            <constraint firstItem="ecd-v2-mFt" firstAttribute="leading" secondItem="hcT-w3-DAI" secondAttribute="leading" constant="120" id="wdI-tJ-sge"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="hcT-w3-DAI"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
+                                        <rect key="frame" x="0.0" y="163.66666666666666" width="335" height="153.99999999999997"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEf-hP-1Ga" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000028" width="135" height="119"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-qO-fuC">
+                                                <rect key="frame" x="88" y="8.0000000000000018" width="158" height="23.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="bottom" secondItem="jEf-hP-1Ga" secondAttribute="bottom" id="0hX-bK-0l9"/>
+                                            <constraint firstItem="jEf-hP-1Ga" firstAttribute="leading" secondItem="2bt-D7-IXe" secondAttribute="leading" constant="100" id="P7G-CH-MK3"/>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="trailing" secondItem="jEf-hP-1Ga" secondAttribute="trailing" constant="100" id="aEY-Dz-t2J"/>
+                                            <constraint firstItem="PJJ-qO-fuC" firstAttribute="top" secondItem="2bt-D7-IXe" secondAttribute="top" constant="8" id="cjF-sJ-lIQ"/>
+                                            <constraint firstItem="PJJ-qO-fuC" firstAttribute="leading" secondItem="2bt-D7-IXe" secondAttribute="leading" constant="88" id="gUL-Cf-h1W"/>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="trailing" secondItem="PJJ-qO-fuC" secondAttribute="trailing" constant="89" id="huk-Mq-lRh"/>
+                                            <constraint firstItem="jEf-hP-1Ga" firstAttribute="top" secondItem="2bt-D7-IXe" secondAttribute="top" constant="35" id="zOS-Fi-7n4"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="2bt-D7-IXe"/>
+                                    </view>
+                                    <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Tw-xuV">
+                                        <rect key="frame" x="0.0" y="327.66666666666669" width="335" height="153.66666666666669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-Sj-JCg" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Inside" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm8-Uy-pTj">
+                                                <rect key="frame" x="79" y="8.0000000000000018" width="177" height="23.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="VzM-Sj-JCg" firstAttribute="top" secondItem="PLz-cg-DFY" secondAttribute="top" constant="35" id="4ab-rm-WNz"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="bottom" secondItem="VzM-Sj-JCg" secondAttribute="bottom" id="V1O-0X-GCN"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="trailing" secondItem="Dm8-Uy-pTj" secondAttribute="trailing" constant="79" id="WbA-2U-GcD"/>
+                                            <constraint firstItem="Dm8-Uy-pTj" firstAttribute="leading" secondItem="PLz-cg-DFY" secondAttribute="leading" constant="79" id="d4L-zr-w6n"/>
+                                            <constraint firstItem="VzM-Sj-JCg" firstAttribute="leading" secondItem="PLz-cg-DFY" secondAttribute="leading" constant="100" id="dfd-Az-AL5"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="trailing" secondItem="VzM-Sj-JCg" secondAttribute="trailing" constant="100" id="fVN-XJ-sZw"/>
+                                            <constraint firstItem="Dm8-Uy-pTj" firstAttribute="top" secondItem="PLz-cg-DFY" secondAttribute="top" constant="8" id="sfX-ri-vaF"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="PLz-cg-DFY"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-8e-Xec" userLabel="ParkingElectric">
+                                        <rect key="frame" x="0.0" y="491.33333333333343" width="335" height="153.66666666666669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVi-IB-Qjx" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Electric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAU-me-VUx">
+                                                <rect key="frame" x="73" y="8.0000000000000018" width="189" height="23.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="EVi-IB-Qjx" firstAttribute="top" secondItem="zid-Tp-HQZ" secondAttribute="top" constant="35" id="5pO-xD-0Gn"/>
+                                            <constraint firstItem="zid-Tp-HQZ" firstAttribute="trailing" secondItem="EVi-IB-Qjx" secondAttribute="trailing" constant="100" id="FjG-eN-GVd"/>
+                                            <constraint firstItem="zid-Tp-HQZ" firstAttribute="trailing" secondItem="PAU-me-VUx" secondAttribute="trailing" constant="73" id="Ohg-PH-pSl"/>
+                                            <constraint firstItem="PAU-me-VUx" firstAttribute="leading" secondItem="zid-Tp-HQZ" secondAttribute="leading" constant="73" id="Pik-NZ-9wi"/>
+                                            <constraint firstItem="PAU-me-VUx" firstAttribute="top" secondItem="zid-Tp-HQZ" secondAttribute="top" constant="8" id="qJK-PH-ZDo"/>
+                                            <constraint firstItem="EVi-IB-Qjx" firstAttribute="leading" secondItem="zid-Tp-HQZ" secondAttribute="leading" constant="100" id="s9J-Tp-lLW"/>
+                                            <constraint firstAttribute="bottom" secondItem="EVi-IB-Qjx" secondAttribute="bottom" id="vWO-2I-Roj"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="zid-Tp-HQZ"/>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" name="PrimaryBlue"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Tw-xuV">
-                                <rect key="frame" x="16" y="245" width="343" height="176"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LZ1-xh-Gbm">
-                                        <rect key="frame" x="146" y="64" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="PrimaryBlue"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-gI-XhQ">
-                                <rect key="frame" x="16" y="429" width="343" height="176"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UqN-bF-TCD">
-                                        <rect key="frame" x="146" y="63" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" name="PrimaryBlue"/>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="top" secondItem="Yaz-j6-Jrx" secondAttribute="top" constant="20" id="AxK-lf-7RY"/>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="bottom" secondItem="Yaz-j6-Jrx" secondAttribute="bottom" constant="-20" id="PdA-1A-WIX"/>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="leading" secondItem="Yaz-j6-Jrx" secondAttribute="leading" constant="20" id="RaO-IU-SGH"/>
+                            <constraint firstItem="Yaz-j6-Jrx" firstAttribute="trailing" secondItem="6Bi-jI-IVT" secondAttribute="trailing" constant="20" id="ivo-er-VKZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yaz-j6-Jrx"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
                     <connections>
-                        <outlet property="P10InsLabel" destination="LZ1-xh-Gbm" id="xq6-6m-C4U"/>
-                        <outlet property="P10TLabel" destination="Smj-rq-34n" id="Ud1-0g-ole"/>
-                        <outlet property="P5Label" destination="UqN-bF-TCD" id="Cv0-Bt-DlQ"/>
-                        <outlet property="ParkingP10Inside" destination="uz2-Tw-xuV" id="VBd-hH-7Dk"/>
+                        <outlet property="ParkinP5Progress" destination="QeA-D1-xZl" id="YwO-7k-t0e"/>
+                        <outlet property="ParkingElectric" destination="Ewq-8e-Xec" id="6hs-Me-365"/>
+                        <outlet property="ParkingElectricProgress" destination="EVi-IB-Qjx" id="NCi-2O-2Fy"/>
+                        <outlet property="ParkingP10Inside" destination="VzM-Sj-JCg" id="ACp-Yc-BlY"/>
+                        <outlet property="ParkingP10InsideProgress" destination="VzM-Sj-JCg" id="F55-zr-Qj8"/>
                         <outlet property="ParkingP10Top" destination="5vH-G3-4tO" id="EY9-XN-jWk"/>
+                        <outlet property="ParkingP10TopProgress" destination="jEf-hP-1Ga" id="840-5W-Y9T"/>
                         <outlet property="ParkingP5" destination="DCU-gI-XhQ" id="chV-Gq-Whz"/>
+                        <outlet property="ParkingStackView" destination="6Bi-jI-IVT" id="IYG-r8-X0V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMP-HB-3jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1853.5999999999999" y="-537.48125937031489"/>
+            <point key="canvasLocation" x="1853.5999999999999" y="-537.93103448275861"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ELr-iF-Y6w">
@@ -199,7 +423,7 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterScreen" id="cke-Mq-cP6" customClass="RegisterViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="oq2-sg-CP3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
@@ -246,7 +470,7 @@
             <objects>
                 <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h0P-6I-BHd" customClass="SettingsViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gOx-RY-z6t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QOE-bt-1l3">
@@ -273,7 +497,7 @@
             <objects>
                 <viewController storyboardIdentifier="ResetPasswordScreen" id="gYM-NI-Kaz" customClass="ResetViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="HtN-zh-zCv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
