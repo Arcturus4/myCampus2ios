@@ -10,6 +10,11 @@ import UIKit
 import MBCircularProgressBar
 
 class ParkingViewController: UIViewController, TokenDelegate {
+    var P5Progress = 0
+    var p10TopProgress = 0
+    var P10InsideProgress = 0
+    var ElectricProgress = 0
+    
 func setToken(token: String) {
     print("SetToken")
     parkingData()
@@ -29,10 +34,7 @@ func setToken(token: String) {
     @IBOutlet weak var ParkingElectricProgress: MBCircularProgressBarView!
     
     //Progress Values
-    var P5Progress = 13
-    var p10TopProgress = 24
-    var P10InsideProgress = 45
-    var ElectricProgress = 67
+    
     
 
     
@@ -83,8 +85,8 @@ func setToken(token: String) {
             
             let urls : [URL] = [first, second, third]
             
-            for (index, element) in urls.enumerated() {
-              print("Item \(index): \(element)")
+            for (indexx, element) in urls.enumerated() {
+              print("Item \(indexx): \(element)")
             
             
             var request = URLRequest(url: element)
@@ -115,28 +117,84 @@ func setToken(token: String) {
                 }
                 if let data = data, let string = String(data: data, encoding: .utf8) {
                     //process data
-                    print(data)
+                    print(data, "datacheck")
                     
                 
+                    //!xyMycampus2020
+                     /*if let text = String(bytes: data, encoding: .utf8){
+                         print(text)
+                         }*/
+                    var item = 0
+                    let jsons = try? JSONSerialization.jsonObject(with: data, options: [])
                     
-                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    if let dictionary = jsons as? [String: Any] {
+                    if let value = dictionary["percent"] as? Int {
+                        do{
+                            item = value
+                        }
+                        }
+                    }
+                    
+                
+                     
+                   /* let json = try? (JSONSerialization.jsonObject(with: data, options: []) as! [String:Any])
+                     let percent = json?["percent"] as? [[String:Any]]
+                    print(percent as Any, " percentcheck")
+                     let item = percent?[0]["description"] as? Int
+                    print(item as Any, " itemcheck")*/
+                     
+                    
+                    /*let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     
                     let percent = json?["percent"] as? [[String:Any]]
+                    print(percent, " percentcheck")
                     let item = percent?[0]["description"] as? Int
-                    
+                    print(item, " itemcheck")
+                    */
                     print("data: \(data) string:\(string)")
                     DispatchQueue.main.async {
                         //Populate UI
                         
-                        if (index == 0){
-                            
+                        /*if (index == 0){
+                            self.P5Progress = item ?? 0
                         }
                         else if (index == 1){
-                            
+                            self.P10InsideProgress = item ?? 0
                         }
                         else if (index == 2){
+                            self.p10TopProgress = (item ?? 0)/2
                             
+                            self.ElectricProgress = (item ?? 0)/2
+                        }*/
+                        
+                        switch indexx {
+                        //witch self.index(ofAccessibilityElement: AnyIndex.self) {
+                        case 0 : print("parking url1")
+                        self.P5Progress = item
+                        self.ParkinP5Progress.value = CGFloat(item)
+                        print(self.P5Progress, "check")
+                         
+                        case 1 : print("parking url2")
+                        self.P10InsideProgress = item
+                        self.ParkingP10InsideProgress.value = CGFloat(item)
+                        print(self.P10InsideProgress as Any, "check")
+                            
+                        case 2 : print("parking url3")
+                        self.p10TopProgress = (item)/2
+                        self.ParkingP10TopProgress.value = CGFloat(item)/2
+                        print(self.p10TopProgress, "check")
+                            
+                        self.ElectricProgress = (item)/2
+                        self.ParkingElectricProgress.value = CGFloat(item)/2
+                            print(self.ElectricProgress, "check")
+                            
+                            
+                        default:
+                            break
+                        
                         }
+                        
+                        
                         
                     }
                 }

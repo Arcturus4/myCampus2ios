@@ -144,7 +144,8 @@ class RestaurantViewController: UIViewController {
                     let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     
                     let timeq = json?["queue_time"] as? [[String:Any]]
-                    let item = timeq?[0]["description"] as? Int
+                    var item = timeq?[0]["description"] as? Int
+                    
                     
                     print("data: \(data) string:\(string)")
                     DispatchQueue.main.async {
@@ -152,7 +153,9 @@ class RestaurantViewController: UIViewController {
                             switch indexx {
                             //witch self.index(ofAccessibilityElement: AnyIndex.self) {
                             case 0 : print("timeq1")
-                                
+                            /*var value = Float(item ?? Int(0.1))
+                            Favourites1.setProgress(progress: CGFloat(value), animated: true)*/
+                            
                             case 1 : print("timeq2")
                                 
                             case 2 : print("timeq3")
