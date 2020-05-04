@@ -47,7 +47,7 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LlE-60-xrK"/>
-                                    <segue destination="5zl-KV-7Kf" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mIv-TF-x22"/>
+                                    <segue destination="5zl-KV-7Kf" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mIv-TF-x22"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPh-Pe-hC9">
@@ -80,6 +80,10 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KRO-Ib-pwq">
+                                <rect key="frame" x="166" y="631" width="42" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,6 +106,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6iV-fu-eoZ"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="KRO-Ib-pwq" id="sxP-D0-s2G"/>
                         <outlet property="loginButton" destination="VGT-Ew-NG9" id="pq9-uB-ps6"/>
                         <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
                         <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
@@ -110,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="184.80000000000001" y="89.505247376311857"/>
+            <point key="canvasLocation" x="184.80000000000001" y="89.408866995073893"/>
         </scene>
         <!--Restaurant-->
         <scene sceneID="Ano-zO-Koy">
@@ -166,7 +171,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Utilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-NS-JVw">
-                                        <rect key="frame" x="54" y="7.9999999999999982" width="227" height="28.333333333333329"/>
+                                        <rect key="frame" x="54" y="8" width="227" height="28"/>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -481,7 +486,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-v2-mFt">
-                                                <rect key="frame" x="120" y="8.0000000000000018" width="95" height="23.666666666666671"/>
+                                                <rect key="frame" x="120" y="7.9999999999999982" width="95" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -544,7 +549,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-qO-fuC">
-                                                <rect key="frame" x="88" y="8.0000000000000018" width="158" height="23.666666666666671"/>
+                                                <rect key="frame" x="88" y="7.9999999999999982" width="158" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -607,7 +612,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Inside" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm8-Uy-pTj">
-                                                <rect key="frame" x="79" y="8.0000000000000018" width="177" height="23.666666666666671"/>
+                                                <rect key="frame" x="79" y="7.9999999999999982" width="177" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -670,7 +675,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Electric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAU-me-VUx">
-                                                <rect key="frame" x="73" y="8.0000000000000018" width="189" height="23.666666666666671"/>
+                                                <rect key="frame" x="73" y="7.9999999999999982" width="189" height="23.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -738,7 +743,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2V7-mw-4Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="129"/>
+            <point key="canvasLocation" x="921" y="209"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="h7o-g4-B7y">
@@ -749,7 +754,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
-                                <rect key="frame" x="34" y="52" width="307" height="319"/>
+                                <rect key="frame" x="34" y="52" width="307" height="638"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-lI-w3L">
@@ -848,7 +853,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
-                                <rect key="frame" x="34" y="52" width="307" height="319"/>
+                                <rect key="frame" x="34" y="-267" width="307" height="638"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7B-wY-4Rp">

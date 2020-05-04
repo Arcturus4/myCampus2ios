@@ -33,6 +33,8 @@ func setToken(token: String) {
     @IBOutlet weak var ParkingElectric: UIView!
     @IBOutlet weak var ParkingElectricProgress: MBCircularProgressBarView!
     
+    var loggedIn : String = ""
+    
     //Progress Values
     
     
@@ -42,6 +44,7 @@ func setToken(token: String) {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(loggedIn)
         (UIApplication.shared.delegate as! AppDelegate).tokenDelegate = self
         
         //Initialize Animations
