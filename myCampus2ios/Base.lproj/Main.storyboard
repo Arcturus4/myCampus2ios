@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -21,18 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
                                 <rect key="frame" x="34" y="52" width="307" height="464"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wO-se-mpx">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wO-se-mpx">
                                 <rect key="frame" x="34" y="425" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-jq-UcO">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-jq-UcO">
                                 <rect key="frame" x="34" y="467" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
@@ -75,9 +74,8 @@
                                     <segue destination="gYM-NI-Kaz" kind="showDetail" id="Zox-47-Kap"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-mB-H8j">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fch-mB-H8j">
                                 <rect key="frame" x="34" y="379" width="307" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -86,9 +84,19 @@
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="cEa-ou-hqS" secondAttribute="leading" id="2Tu-Hj-Wbj"/>
+                            <constraint firstItem="Fch-mB-H8j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="335" id="6yF-SJ-WKp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4wO-se-mpx" secondAttribute="trailing" constant="34" id="7X7-9A-2Yp"/>
+                            <constraint firstItem="yPh-Pe-hC9" firstAttribute="top" secondItem="cEa-ou-hqS" secondAttribute="bottom" constant="31" id="CEx-lu-LiP"/>
+                            <constraint firstItem="VGT-Ew-NG9" firstAttribute="top" secondItem="b0s-jq-UcO" secondAttribute="bottom" constant="8" id="D25-Qo-75p"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="cEa-ou-hqS" secondAttribute="trailing" id="DmX-cd-Nth"/>
+                            <constraint firstItem="cEa-ou-hqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="DzI-Oc-o5F"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="Fch-mB-H8j" secondAttribute="trailing" id="eym-qF-4cs"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="VGT-Ew-NG9" secondAttribute="trailing" id="hGy-eT-YZG"/>
                             <constraint firstItem="4wO-se-mpx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="onI-z9-sw9"/>
                             <constraint firstItem="b0s-jq-UcO" firstAttribute="top" secondItem="4wO-se-mpx" secondAttribute="bottom" constant="8" id="pCb-hN-2iE"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="VGT-Ew-NG9" secondAttribute="leading" id="qx6-rM-KGd"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="Fch-mB-H8j" secondAttribute="leading" id="xbw-5F-m8V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -740,17 +748,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
                                 <rect key="frame" x="34" y="52" width="307" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gb0-iy-Otn">
-                                <rect key="frame" x="34" y="425" width="307" height="34"/>
-                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-lI-w3L">
                                 <rect key="frame" x="34" y="467" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -769,9 +770,14 @@
                                     <action selector="registerButton:" destination="cke-Mq-cP6" eventType="touchUpInside" id="fMw-6p-wx3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30q-uf-An3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-cp-sac">
+                                <rect key="frame" x="34" y="383" width="307" height="34"/>
+                                <color key="textColor" name="PrimaryDarkBlue"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30q-uf-An3">
                                 <rect key="frame" x="34" y="425" width="307" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -781,22 +787,30 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DWm-46-YlA" firstAttribute="trailing" secondItem="ex8-lI-w3L" secondAttribute="trailing" constant="34" id="4FQ-pS-iGe"/>
-                            <constraint firstItem="ex8-lI-w3L" firstAttribute="top" secondItem="gb0-iy-Otn" secondAttribute="bottom" constant="8" id="EIg-cg-wQC"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="ex8-lI-w3L" secondAttribute="leading" id="6xH-qv-hTh"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="WcQ-a6-sxF" secondAttribute="leading" id="AhK-uw-y9t"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="fKv-cp-sac" secondAttribute="trailing" id="Cm7-SY-ZoU"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="fKv-cp-sac" secondAttribute="leading" id="I3n-nl-iEg"/>
+                            <constraint firstItem="ex8-lI-w3L" firstAttribute="top" secondItem="30q-uf-An3" secondAttribute="bottom" constant="8" id="IGH-Pw-JAc"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="top" secondItem="fKv-cp-sac" secondAttribute="bottom" constant="8" id="NAg-6B-9c2"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="top" secondItem="DWm-46-YlA" secondAttribute="top" constant="52" id="RCm-c3-dqD"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="ex8-lI-w3L" secondAttribute="trailing" id="pOk-IC-FJc"/>
                             <constraint firstItem="I6P-ce-sIZ" firstAttribute="top" secondItem="ex8-lI-w3L" secondAttribute="bottom" constant="8" id="pj2-u3-aN7"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="WcQ-a6-sxF" secondAttribute="trailing" id="pkn-LW-cJX"/>
                             <constraint firstItem="ex8-lI-w3L" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="34" id="rHJ-Zg-WW4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWm-46-YlA"/>
                     </view>
                     <navigationItem key="navigationItem" id="bQB-k2-H7Y"/>
                     <connections>
-                        <outlet property="registerField" destination="gb0-iy-Otn" id="uGb-4Y-0Pl"/>
+                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="k6E-EO-INg"/>
                         <outlet property="registerNameField" destination="30q-uf-An3" id="wOz-go-49U"/>
                         <outlet property="registerPassField" destination="ex8-lI-w3L" id="gSb-qa-3nF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="811"/>
+            <point key="canvasLocation" x="136.80000000000001" y="810.59113300492618"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9uM-oL-1H0">
@@ -833,7 +847,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
                                 <rect key="frame" x="34" y="52" width="307" height="319"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
@@ -860,6 +874,8 @@
                             <constraint firstItem="y7B-wY-4Rp" firstAttribute="top" secondItem="bR9-ag-bQY" secondAttribute="bottom" constant="54" id="bEd-vV-q1Z"/>
                             <constraint firstItem="RpV-qc-VI8" firstAttribute="trailing" secondItem="y7B-wY-4Rp" secondAttribute="trailing" constant="34" id="eOe-55-Uwq"/>
                             <constraint firstItem="W1A-HT-yCQ" firstAttribute="top" secondItem="y7B-wY-4Rp" secondAttribute="bottom" constant="12" id="etD-XK-Rpv"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="leading" secondItem="y7B-wY-4Rp" secondAttribute="leading" id="hqZ-8T-Xwb"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="trailing" secondItem="y7B-wY-4Rp" secondAttribute="trailing" id="pCv-ln-XT7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RpV-qc-VI8"/>
                     </view>

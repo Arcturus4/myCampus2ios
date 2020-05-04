@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginBtn(_ sender: Any) {
         
-        let body = User(email: loginEmailText!.text!, password: loginPassText!.text!)
+        let body = User(email: loginEmailText.text!, name: "", password: loginPassText.text!)
         let post = APIClient(endp: "/auth/login")
         
         if (loginEmailText.text!.isValidEmail && loginPassText.text!.isValidPassword) {
