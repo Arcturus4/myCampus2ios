@@ -9,8 +9,11 @@
 import UIKit
 import MBCircularProgressBar
 
-class ParkingViewController: UIViewController {
-    
+class ParkingViewController: UIViewController, TokenDelegate {
+func setToken(token: String) {
+    print("SetToken")
+    parkingData()
+}
     @IBOutlet weak var ParkingStackView: UIStackView!
     
     @IBOutlet weak var ParkingP5: UIView!
@@ -31,10 +34,13 @@ class ParkingViewController: UIViewController {
     var P10InsideProgress = 45
     var ElectricProgress = 67
     
+
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (UIApplication.shared.delegate as! AppDelegate).tokenDelegate = self
         
         //Initialize Animations
         self.ParkinP5Progress.value = 0
@@ -66,4 +72,95 @@ class ParkingViewController: UIViewController {
             self.ParkingElectricProgress.value = CGFloat(self.ElectricProgress)
         }
     }
-}
+     let first = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P5")
+        let second = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10")
+        let third = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10TOP")
+        
+        func parkingData(){
+            print("parking1")
+            let delegate = (UIApplication.shared.delegate as! AppDelegate)
+            let token = delegate.token
+            
+            let urls : [URL] = [first, second, third]
+            
+            for (index, element) in urls.enumerated() {
+              print("Item \(index): \(element)")
+            
+            
+            var request = URLRequest(url: element)
+            request.setValue(token, forHTTPHeaderField: "Authorization")
+            request.httpMethod = "GET"
+            
+            //let session = URLSession(configuration: URLSessionConfiguration.default)
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
+                if let error = error {
+                    print("client error: ", error)
+                }
+                guard let httpResponse = response as? HTTPURLResponse,
+                    (200...299).contains(httpResponse.statusCode) else {
+                        //handle server error
+                        
+                        //let UI = UIFont()
+                        
+                        //self.showToast(message: "response not in 200 range", font: UI)
+                        return
+                }
+                
+                if let httpresponse = response as? HTTPURLResponse {
+                    print(httpresponse.statusCode)
+                    print(httpresponse)
+                //if let response = data as? HTTPURLResponse{
+                    //print(response.statusCode)
+                }
+                if let data = data, let string = String(data: data, encoding: .utf8) {
+                    //process data
+                    print(data)
+                    
+                
+                    
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    
+                    let percent = json?["percent"] as? [[String:Any]]
+                    let item = percent?[0]["description"] as? Int
+                    
+                    print("data: \(data) string:\(string)")
+                    DispatchQueue.main.async {
+                        //Populate UI
+                        
+                        if (index == 0){
+                            
+                        }
+                        else if (index == 1){
+                            
+                        }
+                        else if (index == 2){
+                            
+                        }
+                        
+                    }
+                }
+                
+            })
+            task.resume()
+            }
+        }
+        
+        
+    }
+
+    extension URL {
+        init(staticString string: StaticString) {
+            guard let url = URL(string: "\(string)") else {
+                preconditionFailure("Invalid static URL string: \(string)")
+            }
+
+            self = url
+        }
+    }
+
+    protocol TokenDelegate {
+        func setToken(token: String)
+        
+        
+    }

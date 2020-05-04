@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
     
 
     @IBAction func registerButton(_ sender: Any) {
-        let registerBody = User(email: registerField.text!, name: registerNameField.text!, password: registerPassField.text!)
+        let registerBody = User(email: registerEmailField.text!, name: registerNameField.text!, password: registerPassField.text!)
         let register = APIClient(endp: "/auth/signup")
         
         

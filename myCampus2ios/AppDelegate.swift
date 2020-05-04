@@ -12,7 +12,9 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var token = ""
+   var token = "" {didSet{tokenDelegate?.setToken(token: token)}}
+    
+    var tokenDelegate: TokenDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
