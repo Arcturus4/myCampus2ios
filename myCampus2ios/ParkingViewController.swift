@@ -25,6 +25,8 @@ class ParkingViewController: UIViewController {
     @IBOutlet weak var ParkingElectric: UIView!
     @IBOutlet weak var ParkingElectricProgress: MBCircularProgressBarView!
     
+    var loggedIn : String = ""
+    
     //Progress Values
     var P5Progress = 13
     var p10TopProgress = 24
@@ -35,7 +37,7 @@ class ParkingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(loggedIn)
         //Initialize Animations
         self.ParkinP5Progress.value = 0
         self.ParkingP10TopProgress.value = 0

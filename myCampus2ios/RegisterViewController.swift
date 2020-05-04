@@ -13,28 +13,31 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerNameField: UITextField!
     @IBOutlet weak var registerPassField: UITextField!
     
+    var logged : String = ""
     var authToken = (UIApplication.shared.delegate as! AppDelegate).token
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func registerButton(_ sender: Any) {
-        let registerBody = User(email: registerField.text!, name: registerNameField.text!, password: registerPassField.text!)
+        let registerBody = User(email: registerEmailField.text!, name: registerNameField.text!, password: registerPassField.text!)
         let register = APIClient(endp: "/auth/signup")
         
         
         register.networkRequest(registerBody, completion: {result in
                   switch result {
-                  case .success(let body):
+                  case .success(let reg):
                       DispatchQueue.main.async {
                           print(self.authToken)
                       }
-                      print("Email is: \(String(describing: body.email))")
-                      print("Password is: \(String(describing: body.password))")
+                      print("Email is: \(reg.email!)")
+                        print("Name is: \(reg.name!)")
+                      print("Password is: \(reg.password!)")
                   case .failure(let error):
                       print("There was some kind of an error: \(error)")
                   }
