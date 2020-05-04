@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginEmailText: UITextField!
     @IBOutlet weak var loginPassText: UITextField!
-    @IBOutlet weak var validText: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -21,18 +20,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         activityIndicator.hidesWhenStopped = true
-        validText.isHidden = true
-        validText.isHighlighted = false
-        // Do any additional setup after loading the view.
+        
     }
     
     
     @IBAction func LoginBtn(_ sender: Any) {
         self.activityIndicator.color = .white
         self.activityIndicator.startAnimating()
-        let body = User(email: loginEmailText.text!, name: "", password: loginPassText.text!)
+        let body = User(email: loginEmailText.text!, password: loginPassText.text!)
         let post = APIClient(endp: "/auth/login")
         
         if (loginEmailText.text == "" || loginPassText.text == "" ) {
