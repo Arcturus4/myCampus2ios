@@ -49,16 +49,6 @@ class RestaurantViewController: UIViewController, TokenDelegate {
     var VegePercent = 0.0
     var CafePickupLinePercent = 0.0
     var SaladPercent = 0.00
-=======
-    var Favorites1Percent = 0.46
-    var Favorites2Percent = 0.63
-    var PizzaPercent = 0.76
-    var RoundTablePercent = 0.87
-    var BowlPercent = 0.96
-    var VegePercent = 0.26
-    var CafePickupLinePercent = 0.42
-    var SaladPercent = 0.52
->>>>>>> 194da840ef927d441fef6e853fe2ae08dd1b7731
 
     
     override func viewDidLoad() {
@@ -143,15 +133,15 @@ class RestaurantViewController: UIViewController, TokenDelegate {
                 }
                 if let data = data, let string = String(data: data, encoding: .utf8) {
                     //process data
-<<<<<<< HEAD
+
                     print(data, "datacheck")
                         
-=======
+
                     print(data)
                 
                     
                     let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
->>>>>>> 194da840ef927d441fef6e853fe2ae08dd1b7731
+
                     
                         //!xyMycampus2020
                        
