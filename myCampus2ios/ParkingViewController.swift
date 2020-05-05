@@ -130,6 +130,10 @@ func setToken(token: String) {
                     var item = 0
                     let jsons = try? JSONSerialization.jsonObject(with: data, options: [])
                     
+                    /* if let dictionary = jsons as? [String: Any] {
+                        print("I'm here")
+                    if let value = dictionary["queue_time"] as? Int {*/
+                    
                     if let dictionary = jsons as? [String: Any] {
                     if let value = dictionary["percent"] as? Int {
                         do{
@@ -171,7 +175,7 @@ func setToken(token: String) {
                         }*/
                         
                         switch indexx {
-                        //witch self.index(ofAccessibilityElement: AnyIndex.self) {
+                        //witch self.index(ofAccessibilityElement: AnyIndex.sself) {
                         case 0 : print("parking url1")
                         self.P5Progress = item
                         self.ParkinP5Progress.value = CGFloat(item)
