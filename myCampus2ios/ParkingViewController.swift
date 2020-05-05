@@ -104,6 +104,7 @@ class ParkingViewController: UIViewController, TokenDelegate {
                 guard let httpResponse = response as? HTTPURLResponse,
                     (200...299).contains(httpResponse.statusCode) else {
                         
+                        
                         //show alert if request fails
                         let alert = UIAlertController(title: "My Alert", message: "API not responding to request", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in

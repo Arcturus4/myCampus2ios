@@ -99,6 +99,7 @@ class RestaurantViewController: UIViewController, TokenDelegate {
     let eight = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/8")
     
     // process api response in range 1-5 for desired time estimates and display them in labels
+    
     func queueTime(value: Int, label: UILabel, actualName: String) {
         var name = label
         switch value {

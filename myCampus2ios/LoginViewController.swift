@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var accessToken = (UIApplication.shared.delegate as! AppDelegate).token
+    var log : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

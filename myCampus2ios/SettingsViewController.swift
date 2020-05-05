@@ -8,23 +8,32 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
+class SettingsViewController: UIViewController, TokenDelegate {
+    func setToken(token: String) {
+    }
+    
+    
+    var tokenPayload = (UIApplication.shared.delegate as! AppDelegate).token
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func buttonLogOut(_ sender: Any) {
+        tokenPayload.removeAll()
+         self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        
     }
-    */
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backtoLoginSegue" {
+            let dVC = segue.destination as? LoginViewController
+            dVC?.log = "Password reset successful"
+        }
+    }
+    
+    
 }
