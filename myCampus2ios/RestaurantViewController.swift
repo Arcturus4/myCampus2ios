@@ -128,7 +128,7 @@ class RestaurantViewController: UIViewController, TokenDelegate {
                     (200...299).contains(httpResponse.statusCode) else {
                         //handle server error
                         
-                        //let UI = UIFont()
+                        //let UI = UIFont()s
                         
                         //self.showToast(message: "response not in 200 range", font: UI)
                         return

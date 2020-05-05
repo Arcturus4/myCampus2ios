@@ -175,7 +175,7 @@ func setToken(token: String) {
                         }*/
                         
                         switch indexx {
-                        //witch self.index(ofAccessibilityElement: AnyIndex.self) {
+                        //witch self.index(ofAccessibilityElement: AnyIndex.sself) {
                         case 0 : print("parking url1")
                         self.P5Progress = item
                         self.ParkinP5Progress.value = CGFloat(item)
