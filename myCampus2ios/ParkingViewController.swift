@@ -9,16 +9,18 @@
 import UIKit
 import MBCircularProgressBar
 
+//Class contains method for accessing parking data on API, a custom protocol for making
+//sure the token has been set and references to UI components
 class ParkingViewController: UIViewController, TokenDelegate {
     var P5Progress = 0
     var p10TopProgress = 0
     var P10InsideProgress = 0
     var ElectricProgress = 0
     
-func setToken(token: String) {
-    print("SetToken")
-    parkingData()
-}
+    func setToken(token: String) {
+        print("SetToken")
+        parkingData()
+    }
     @IBOutlet weak var ParkingStackView: UIStackView!
     
     @IBOutlet weak var ParkingP5: UIView!
@@ -34,13 +36,6 @@ func setToken(token: String) {
     @IBOutlet weak var ParkingElectricProgress: MBCircularProgressBarView!
     
     var loggedIn : String = ""
-    
-    //Progress Values
-    
-    
-
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,110 +72,85 @@ func setToken(token: String) {
             self.ParkingElectricProgress.value = CGFloat(self.ElectricProgress)
         }
     }
-     let first = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P5")
-        let second = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10")
-        let third = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10TOP")
+    
+    //Endpoints for parking
+    let first = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P5")
+    let second = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10")
+    let third = URL(staticString: "https://mycampus-server.karage.fi/api/common/parking/status/P10TOP")
+    
+    
+    //fetching parking utilization values for each endpoint
+    func parkingData(){
+        print("parking1")
+        let delegate = (UIApplication.shared.delegate as! AppDelegate)
+        let token = delegate.token
         
-        func parkingData(){
-            print("parking1")
-            let delegate = (UIApplication.shared.delegate as! AppDelegate)
-            let token = delegate.token
+        let urls : [URL] = [first, second, third]
+        
+        //for each endpoint
+        for (indexx, element) in urls.enumerated() {
+            print("Item \(indexx): \(element)")
             
-            let urls : [URL] = [first, second, third]
-            
-            for (indexx, element) in urls.enumerated() {
-              print("Item \(indexx): \(element)")
-            
-            
+            //create request
             var request = URLRequest(url: element)
             request.setValue(token, forHTTPHeaderField: "Authorization")
             request.httpMethod = "GET"
             
-            //let session = URLSession(configuration: URLSessionConfiguration.default)
-            
+            //Connection to api for current endpoint
             let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
                 if let error = error {
                     print("client error: ", error)
                 }
                 guard let httpResponse = response as? HTTPURLResponse,
                     (200...299).contains(httpResponse.statusCode) else {
-                        //handle server error
                         
-                        //let UI = UIFont()
+                        //show alert if request fails
+                        let alert = UIAlertController(title: "My Alert", message: "API not responding to request", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
+                            NSLog("API error: message not in range 200..299")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
                         
-                        //self.showToast(message: "response not in 200 range", font: UI)
                         return
                 }
                 
                 if let httpresponse = response as? HTTPURLResponse {
                     print(httpresponse.statusCode)
                     print(httpresponse)
-                //if let response = data as? HTTPURLResponse{
-                    //print(response.statusCode)
+                    
                 }
+                //on successful response, porceed to json decoding
                 if let data = data, let string = String(data: data, encoding: .utf8) {
-                    //process data
+                    
                     print(data, "datacheck")
                     
-                
-                    //!xyMycampus2020
-                     /*if let text = String(bytes: data, encoding: .utf8){
-                         print(text)
-                         }*/
+                    
                     var item = 0
                     let jsons = try? JSONSerialization.jsonObject(with: data, options: [])
                     
-                    /* if let dictionary = jsons as? [String: Any] {
-                        print("I'm here")
-                    if let value = dictionary["queue_time"] as? Int {*/
                     
                     if let dictionary = jsons as? [String: Any] {
-                    if let value = dictionary["percent"] as? Int {
-                        do{
-                            item = value
-                        }
+                        if let value = dictionary["percent"] as? Int {
+                            do{
+                                item = value
+                            }
                         }
                     }
                     
-                
-                     
-                   /* let json = try? (JSONSerialization.jsonObject(with: data, options: []) as! [String:Any])
-                     let percent = json?["percent"] as? [[String:Any]]
-                    print(percent as Any, " percentcheck")
-                     let item = percent?[0]["description"] as? Int
-                    print(item as Any, " itemcheck")*/
-                     
                     
-                    /*let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     
-                    let percent = json?["percent"] as? [[String:Any]]
-                    print(percent, " percentcheck")
-                    let item = percent?[0]["description"] as? Int
-                    print(item, " itemcheck")
-                    */
+                   //Using the extracted data
                     print("data: \(data) string:\(string)")
                     DispatchQueue.main.async {
                         //Populate UI
-                        
-                        /*if (index == 0){
-                            self.P5Progress = item ?? 0
-                        }
-                        else if (index == 1){
-                            self.P10InsideProgress = item ?? 0
-                        }
-                        else if (index == 2){
-                            self.p10TopProgress = (item ?? 0)/2
-                            
-                            self.ElectricProgress = (item ?? 0)/2
-                        }*/
-                        
+                       
                         switch indexx {
                         //witch self.index(ofAccessibilityElement: AnyIndex.sself) {
                         case 0 : print("parking url1")
                         self.P5Progress = item
                         self.ParkinP5Progress.value = CGFloat(item)
                         print(self.P5Progress, "check")
-                         
+                            
                         case 1 : print("parking url2")
                         self.P10InsideProgress = item
                         self.ParkingP10InsideProgress.value = CGFloat(item)
@@ -190,15 +160,15 @@ func setToken(token: String) {
                         self.p10TopProgress = (item)/2
                         self.ParkingP10TopProgress.value = CGFloat(item)/2
                         print(self.p10TopProgress, "check")
-                            
+                        
                         self.ElectricProgress = (item)/2
                         self.ParkingElectricProgress.value = CGFloat(item)/2
-                            print(self.ElectricProgress, "check")
+                        print(self.ElectricProgress, "check")
                             
                             
                         default:
                             break
-                        
+                            
                         }
                         
                         
@@ -208,11 +178,11 @@ func setToken(token: String) {
                 
             })
             task.resume()
-            }
         }
-        
-        
     }
+    
+    
+}
 
     extension URL {
         init(staticString string: StaticString) {
