@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
-                                <rect key="frame" x="34" y="52" width="307" height="464"/>
+                                <rect key="frame" x="34" y="96" width="307" height="420"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wO-se-mpx">
@@ -88,13 +88,15 @@
                             <constraint firstItem="yPh-Pe-hC9" firstAttribute="top" secondItem="cEa-ou-hqS" secondAttribute="bottom" constant="31" id="CEx-lu-LiP"/>
                             <constraint firstItem="VGT-Ew-NG9" firstAttribute="top" secondItem="b0s-jq-UcO" secondAttribute="bottom" constant="8" id="D25-Qo-75p"/>
                             <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="cEa-ou-hqS" secondAttribute="trailing" id="DmX-cd-Nth"/>
-                            <constraint firstItem="cEa-ou-hqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="DzI-Oc-o5F"/>
+                            <constraint firstItem="cEa-ou-hqS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="EUf-lA-1l9"/>
                             <constraint firstItem="KRO-Ib-pwq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="OvG-tk-Os5"/>
                             <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="VGT-Ew-NG9" secondAttribute="trailing" id="hGy-eT-YZG"/>
                             <constraint firstItem="4wO-se-mpx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="onI-z9-sw9"/>
                             <constraint firstItem="b0s-jq-UcO" firstAttribute="top" secondItem="4wO-se-mpx" secondAttribute="bottom" constant="8" id="pCb-hN-2iE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cEa-ou-hqS" secondAttribute="trailing" constant="34" id="q3V-ZT-0qJ"/>
                             <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="VGT-Ew-NG9" secondAttribute="leading" id="qx6-rM-KGd"/>
                             <constraint firstItem="KRO-Ib-pwq" firstAttribute="top" secondItem="xdL-wM-duP" secondAttribute="bottom" constant="16" id="tav-2U-Xva"/>
+                            <constraint firstItem="cEa-ou-hqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="tif-Xf-JWe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -121,65 +123,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-lR-6rK">
                                 <rect key="frame" x="20" y="64" width="335" height="645"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UuU-pd-1oZ" customClass="MBCircularProgressBarView">
-                                        <rect key="frame" x="100" y="47.333333333333314" width="135" height="117.66666666666669"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" name="PrimaryBlue"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
-                                                <color key="value" name="PrimaryDarkBlue"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
-                                                <color key="value" name="PrimaryDarkBlue"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                <real key="value" value="100"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
-                                                <integer key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Utilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-NS-JVw">
-                                        <rect key="frame" x="54" y="8" width="227" height="28"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WQB-qX-NeQ">
-                                        <rect key="frame" x="0.0" y="163.99999999999997" width="335" height="480.33333333333326"/>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WQB-qX-NeQ">
+                                        <rect key="frame" x="0.0" y="85" width="335" height="550"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guk-HP-8Fr">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="25.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPh-Sv-67u" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="30.333333333333314" width="335" height="25.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="35" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="Q58-Yc-Yc0"/>
@@ -197,14 +151,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hfg-0V-758">
-                                                <rect key="frame" x="0.0" y="60.666666666666664" width="335" height="25.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="70" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQN-ra-QEf" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="91" width="335" height="25.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="105" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="bnO-xw-cdZ"/>
@@ -222,14 +176,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9xx-Jf-7rP">
-                                                <rect key="frame" x="0.0" y="121.33333333333333" width="335" height="25.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="140" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnN-2L-8ni" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="151.66666666666669" width="335" height="25.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="175" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="WiK-1N-dv9"/>
@@ -247,14 +201,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7DA-q8-Gee">
-                                                <rect key="frame" x="0.0" y="182" width="335" height="25.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="210" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-0E-cYM" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="212.33333333333331" width="335" height="25.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="245" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="LPF-8i-Nsa"/>
@@ -272,14 +226,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ejJ-Ls-iNJ">
-                                                <rect key="frame" x="0.0" y="242.66666666666666" width="335" height="25.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="280" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUk-gP-u6c" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="273" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="315" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="m3w-53-PuB"/>
@@ -297,14 +251,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RrY-ea-tgd">
-                                                <rect key="frame" x="0.0" y="303.33333333333331" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="350" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-YE-yPZ" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="333.66666666666663" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="385" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="YAA-zw-jCP"/>
@@ -322,14 +276,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjf-qP-Fxb">
-                                                <rect key="frame" x="0.0" y="364" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="420" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-AK-a9P" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="394.33333333333337" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="455" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="CUC-xI-rlj"/>
@@ -347,14 +301,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2re-Gg-IYH">
-                                                <rect key="frame" x="0.0" y="424.66666666666669" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="490" width="335" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smX-bm-FNb" customClass="AMProgressBar" customModule="AMProgressBar">
-                                                <rect key="frame" x="0.0" y="455" width="335" height="25.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="525" width="335" height="25"/>
                                                 <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                                 <color key="tintColor" name="PrimaryDarkBlue"/>
                                                 <viewLayoutGuide key="safeArea" id="dKh-U3-JZi"/>
@@ -372,19 +326,25 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <viewLayoutGuide key="safeArea" id="hWl-4T-hZh"/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Utilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-NS-JVw">
+                                        <rect key="frame" x="54" y="30" width="227" height="25"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="PrimaryBlue"/>
                                 <color key="tintColor" name="PrimaryBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="sqs-NS-JVw" secondAttribute="trailing" constant="54" id="Jyj-c4-wu4"/>
-                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" id="SBS-hw-xhX"/>
-                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="top" secondItem="wo4-lR-6rK" secondAttribute="top" constant="8" id="SYi-xs-pfP"/>
-                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="top" secondItem="wo4-lR-6rK" secondAttribute="top" constant="164" id="bKp-i4-gH7"/>
-                                    <constraint firstAttribute="trailing" secondItem="WQB-qX-NeQ" secondAttribute="trailing" id="dnL-dh-Clc"/>
-                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" constant="54" id="jgK-qk-cjC"/>
-                                    <constraint firstAttribute="bottom" secondItem="WQB-qX-NeQ" secondAttribute="bottom" id="z5G-zR-qpj"/>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="top" secondItem="sqs-NS-JVw" secondAttribute="bottom" constant="30" id="0Mr-7T-k4e"/>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="top" secondItem="sqs-NS-JVw" secondAttribute="bottom" constant="30" id="ASP-Ob-kgg"/>
+                                    <constraint firstAttribute="bottom" secondItem="WQB-qX-NeQ" secondAttribute="bottom" constant="10" id="Dqr-fy-rNU"/>
+                                    <constraint firstAttribute="trailing" secondItem="WQB-qX-NeQ" secondAttribute="trailing" id="FsF-5Z-ri0"/>
+                                    <constraint firstAttribute="trailing" secondItem="sqs-NS-JVw" secondAttribute="trailing" constant="54" id="NeO-Kb-8n8"/>
+                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="top" secondItem="wo4-lR-6rK" secondAttribute="top" constant="30" id="Sd8-7A-P7G"/>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" id="Zna-Hn-kFp"/>
+                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" constant="54" id="k3l-EO-ie4"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -410,7 +370,6 @@
                         <outlet property="Pizza" destination="ZnN-2L-8ni" id="oZk-PN-iqz"/>
                         <outlet property="PizzaLabel" destination="9xx-Jf-7rP" id="dHI-h1-65v"/>
                         <outlet property="RestaurantMainView" destination="wo4-lR-6rK" id="bNE-fG-5A7"/>
-                        <outlet property="RestaurantUtilisationMain" destination="UuU-pd-1oZ" id="gA6-dD-mVC"/>
                         <outlet property="RoundTable" destination="nYv-0E-cYM" id="XvA-Jy-Ucd"/>
                         <outlet property="RoundTableLabel" destination="7DA-q8-Gee" id="QsA-4q-yJ5"/>
                         <outlet property="Salad" destination="smX-bm-FNb" id="jTL-u9-AMB"/>
@@ -421,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S69-jd-bFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="166"/>
+            <point key="canvasLocation" x="1980" y="165.51724137931035"/>
         </scene>
         <!--Parking-->
         <scene sceneID="N9E-kp-ORP">
@@ -747,7 +706,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
-                                <rect key="frame" x="34" y="52" width="307" height="638"/>
+                                <rect key="frame" x="34" y="52" width="307" height="319"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-lI-w3L">
@@ -757,7 +716,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I6P-ce-sIZ">
-                                <rect key="frame" x="34" y="509" width="307" height="30"/>
+                                <rect key="frame" x="34" y="509" width="307.00000000000017" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
@@ -793,15 +752,21 @@
                             <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="fKv-cp-sac" secondAttribute="trailing" id="Cm7-SY-ZoU"/>
                             <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="fKv-cp-sac" secondAttribute="leading" id="I3n-nl-iEg"/>
                             <constraint firstItem="ex8-lI-w3L" firstAttribute="top" secondItem="30q-uf-An3" secondAttribute="bottom" constant="8" id="IGH-Pw-JAc"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="Klz-VR-cH0"/>
+                            <constraint firstItem="DWm-46-YlA" firstAttribute="trailing" secondItem="WcQ-a6-sxF" secondAttribute="trailing" constant="34" id="MBq-tJ-tg4"/>
                             <constraint firstItem="30q-uf-An3" firstAttribute="top" secondItem="fKv-cp-sac" secondAttribute="bottom" constant="8" id="NAg-6B-9c2"/>
                             <constraint firstItem="DWm-46-YlA" firstAttribute="bottom" secondItem="gzR-fk-uNM" secondAttribute="bottom" constant="133" id="Qle-up-8fw"/>
                             <constraint firstItem="WcQ-a6-sxF" firstAttribute="top" secondItem="DWm-46-YlA" secondAttribute="top" constant="52" id="RCm-c3-dqD"/>
+                            <constraint firstItem="ex8-lI-w3L" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="RYK-SJ-rBe"/>
+                            <constraint firstItem="I6P-ce-sIZ" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="S1d-bu-3NM"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="34" id="TKz-EP-zmh"/>
                             <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="ex8-lI-w3L" secondAttribute="trailing" id="pOk-IC-FJc"/>
                             <constraint firstItem="I6P-ce-sIZ" firstAttribute="top" secondItem="ex8-lI-w3L" secondAttribute="bottom" constant="8" id="pj2-u3-aN7"/>
                             <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="WcQ-a6-sxF" secondAttribute="trailing" id="pkn-LW-cJX"/>
                             <constraint firstItem="ex8-lI-w3L" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="34" id="rHJ-Zg-WW4"/>
                             <constraint firstItem="gzR-fk-uNM" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="168" id="rJV-91-Gc7"/>
                             <constraint firstItem="DWm-46-YlA" firstAttribute="trailing" secondItem="gzR-fk-uNM" secondAttribute="trailing" constant="165" id="upg-43-ZcV"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="top" secondItem="DWm-46-YlA" secondAttribute="top" constant="52" id="wLI-yX-6Jp"/>
                             <constraint firstItem="gzR-fk-uNM" firstAttribute="top" secondItem="I6P-ce-sIZ" secondAttribute="bottom" constant="20" id="yup-5Z-yyK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWm-46-YlA"/>
@@ -855,7 +820,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
-                                <rect key="frame" x="34" y="-267" width="307" height="638"/>
+                                <rect key="frame" x="34" y="52" width="307" height="319"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7B-wY-4Rp">
@@ -864,8 +829,26 @@
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Aw-25s">
+                                <rect key="frame" x="33" y="383" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chs-tZ-FLP">
+                                <rect key="frame" x="33" y="467" width="307.00000000000011" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2M-Ei-m6K">
+                                <rect key="frame" x="33" y="509" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W1A-HT-yCQ">
-                                <rect key="frame" x="34" y="471" width="307" height="30"/>
+                                <rect key="frame" x="33" y="551" width="307" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
@@ -877,11 +860,18 @@
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y7B-wY-4Rp" firstAttribute="leading" secondItem="RpV-qc-VI8" secondAttribute="leading" constant="34" id="NR8-B7-KfE"/>
-                            <constraint firstItem="y7B-wY-4Rp" firstAttribute="top" secondItem="bR9-ag-bQY" secondAttribute="bottom" constant="54" id="bEd-vV-q1Z"/>
-                            <constraint firstItem="RpV-qc-VI8" firstAttribute="trailing" secondItem="y7B-wY-4Rp" secondAttribute="trailing" constant="34" id="eOe-55-Uwq"/>
-                            <constraint firstItem="W1A-HT-yCQ" firstAttribute="top" secondItem="y7B-wY-4Rp" secondAttribute="bottom" constant="12" id="etD-XK-Rpv"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="leading" secondItem="RpV-qc-VI8" secondAttribute="leading" constant="34" id="2lA-Rr-4ZD"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="top" secondItem="RpV-qc-VI8" secondAttribute="top" constant="52" id="5Wk-dF-ghq"/>
+                            <constraint firstItem="V2M-Ei-m6K" firstAttribute="top" secondItem="Chs-tZ-FLP" secondAttribute="bottom" constant="8" id="5lF-xl-eHR"/>
+                            <constraint firstItem="y7B-wY-4Rp" firstAttribute="top" secondItem="axU-Aw-25s" secondAttribute="bottom" constant="8" id="CpY-9Z-QQB"/>
+                            <constraint firstItem="W1A-HT-yCQ" firstAttribute="top" secondItem="V2M-Ei-m6K" secondAttribute="bottom" constant="8" id="IQX-zo-VU6"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="width" secondItem="axU-Aw-25s" secondAttribute="width" id="Idf-KL-uVk"/>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="top" secondItem="bR9-ag-bQY" secondAttribute="bottom" constant="12" id="NV0-dJ-yLc"/>
+                            <constraint firstItem="W1A-HT-yCQ" firstAttribute="width" secondItem="axU-Aw-25s" secondAttribute="width" id="RcW-Yw-oLh"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="top" secondItem="y7B-wY-4Rp" secondAttribute="bottom" constant="8" id="g7v-qB-TgP"/>
                             <constraint firstItem="bR9-ag-bQY" firstAttribute="leading" secondItem="y7B-wY-4Rp" secondAttribute="leading" id="hqZ-8T-Xwb"/>
+                            <constraint firstItem="y7B-wY-4Rp" firstAttribute="width" secondItem="axU-Aw-25s" secondAttribute="width" id="ihO-XX-OUU"/>
+                            <constraint firstItem="RpV-qc-VI8" firstAttribute="trailing" secondItem="bR9-ag-bQY" secondAttribute="trailing" constant="34" id="o0b-db-T7a"/>
                             <constraint firstItem="bR9-ag-bQY" firstAttribute="trailing" secondItem="y7B-wY-4Rp" secondAttribute="trailing" id="pCv-ln-XT7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RpV-qc-VI8"/>
@@ -897,27 +887,42 @@
             <objects>
                 <viewController storyboardIdentifier="AuthScreen" id="hpy-CE-luq" customClass="AuthViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="WbE-la-7kT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-qo-j3t">
-                                <rect key="frame" x="34" y="96" width="307" height="638"/>
+                                <rect key="frame" x="34" y="52" width="307" height="319"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kup-TG-0vY">
-                                <rect key="frame" x="34" y="523" width="307" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kup-TG-0vY">
+                                <rect key="frame" x="34" y="509" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-OP-5H9">
-                                <rect key="frame" x="34" y="481" width="307" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-OP-5H9">
+                                <rect key="frame" x="34" y="467" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-Uw-XmL">
+                                <rect key="frame" x="34" y="425" width="307" height="34"/>
+                                <color key="textColor" name="PrimaryDarkBlue"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" preservesSuperviewLayoutMargins="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OeW-AB-wa9">
+                                <rect key="frame" x="166" y="637" width="43" height="31"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piv-gl-2FB">
+                                <rect key="frame" x="34" y="383" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L9t-xJ-Oor">
-                                <rect key="frame" x="34" y="575" width="307" height="30"/>
+                                <rect key="frame" x="34" y="551" width="307.00000000000017" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
@@ -928,44 +933,33 @@
                                     <action selector="registerButton:" destination="hpy-CE-luq" eventType="touchUpInside" id="q9B-hA-jbX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-Uw-XmL">
-                                <rect key="frame" x="34" y="439" width="307" height="34"/>
-                                <color key="textColor" name="PrimaryDarkBlue"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="OeW-AB-wa9">
-                                <rect key="frame" x="166" y="637" width="42" height="36"/>
-                            </activityIndicatorView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piv-gl-2FB">
-                                <rect key="frame" x="34" y="397" width="307" height="34"/>
-                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="xrb-OP-5H9" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="44" id="12M-f1-gEJ"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="leading" secondItem="RTQ-qo-j3t" secondAttribute="leading" id="36D-A5-3XW"/>
-                            <constraint firstItem="kup-TG-0vY" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="34" id="AUC-dK-lZX"/>
-                            <constraint firstItem="L9t-xJ-Oor" firstAttribute="top" secondItem="kup-TG-0vY" secondAttribute="bottom" constant="8" id="DwM-tf-Wmd"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="trailing" secondItem="PpJ-Uw-XmL" secondAttribute="trailing" id="JWR-AV-COY"/>
-                            <constraint firstItem="OeW-AB-wa9" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="168" id="JfG-IM-nkM"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="leading" secondItem="PpJ-Uw-XmL" secondAttribute="leading" id="MNL-yQ-Mv6"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="trailing" secondItem="kup-TG-0vY" secondAttribute="trailing" id="U0g-VJ-uhc"/>
-                            <constraint firstItem="kup-TG-0vY" firstAttribute="top" secondItem="piv-gl-2FB" secondAttribute="bottom" constant="8" id="c2P-3c-hG5"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="trailing" secondItem="RTQ-qo-j3t" secondAttribute="trailing" id="jaa-rV-TPx"/>
-                            <constraint firstItem="h1B-VH-hF9" firstAttribute="bottom" secondItem="OeW-AB-wa9" secondAttribute="bottom" constant="133" id="lon-Zk-YWQ"/>
-                            <constraint firstItem="OeW-AB-wa9" firstAttribute="top" secondItem="L9t-xJ-Oor" secondAttribute="bottom" constant="20" id="nTY-vT-qmk"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="top" secondItem="PpJ-Uw-XmL" secondAttribute="bottom" constant="8" id="qO9-Pe-rAA"/>
-                            <constraint firstItem="h1B-VH-hF9" firstAttribute="trailing" secondItem="kup-TG-0vY" secondAttribute="trailing" constant="34" id="wF4-BD-Agm"/>
-                            <constraint firstItem="piv-gl-2FB" firstAttribute="leading" secondItem="kup-TG-0vY" secondAttribute="leading" id="wfB-6O-JJ0"/>
-                            <constraint firstItem="h1B-VH-hF9" firstAttribute="trailing" secondItem="OeW-AB-wa9" secondAttribute="trailing" constant="165" id="xQJ-oK-9gQ"/>
-                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="top" secondItem="h1B-VH-hF9" secondAttribute="top" constant="52" id="xZ5-hm-3cd"/>
-                            <constraint firstItem="h1B-VH-hF9" firstAttribute="trailing" secondItem="xrb-OP-5H9" secondAttribute="trailing" constant="24" id="yP3-AX-lb1"/>
-                            <constraint firstItem="xrb-OP-5H9" firstAttribute="top" secondItem="PpJ-Uw-XmL" secondAttribute="bottom" constant="6" id="yuc-W5-aIV"/>
+                            <constraint firstItem="kup-TG-0vY" firstAttribute="top" secondItem="xrb-OP-5H9" secondAttribute="bottom" constant="8" id="3St-0D-5W8"/>
+                            <constraint firstItem="xrb-OP-5H9" firstAttribute="top" secondItem="PpJ-Uw-XmL" secondAttribute="bottom" constant="8" id="3ZX-JB-K0A"/>
+                            <constraint firstItem="OeW-AB-wa9" firstAttribute="top" secondItem="L9t-xJ-Oor" secondAttribute="bottom" constant="56" id="4bh-mt-mm3"/>
+                            <constraint firstItem="h1B-VH-hF9" firstAttribute="bottom" secondItem="OeW-AB-wa9" secondAttribute="bottom" constant="56" id="5du-Yp-OuA"/>
+                            <constraint firstItem="h1B-VH-hF9" firstAttribute="trailing" secondItem="OeW-AB-wa9" secondAttribute="trailing" constant="166" id="7Q7-ef-pLQ"/>
+                            <constraint firstItem="xrb-OP-5H9" firstAttribute="top" secondItem="PpJ-Uw-XmL" secondAttribute="bottom" constant="8" id="8bm-P7-FJa"/>
+                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="34" id="9vp-BH-um6"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="leading" secondItem="xrb-OP-5H9" secondAttribute="leading" id="CpO-DY-P3d"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="trailing" secondItem="xrb-OP-5H9" secondAttribute="trailing" id="Iny-Ha-W8y"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="leading" secondItem="L9t-xJ-Oor" secondAttribute="leading" id="VGf-f6-y40"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="trailing" secondItem="kup-TG-0vY" secondAttribute="trailing" id="WnR-Hn-FVw"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="top" secondItem="piv-gl-2FB" secondAttribute="bottom" constant="8" id="ar5-Mo-CyE"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="leading" secondItem="piv-gl-2FB" secondAttribute="leading" id="c61-Yi-Vag"/>
+                            <constraint firstItem="OeW-AB-wa9" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="166" id="eUA-Tx-b9G"/>
+                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="top" secondItem="h1B-VH-hF9" secondAttribute="top" constant="52" id="fPX-IV-zUt"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="trailing" secondItem="L9t-xJ-Oor" secondAttribute="trailing" id="hBj-Rs-EdU"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="top" secondItem="piv-gl-2FB" secondAttribute="bottom" constant="8" id="jLE-x0-5Mr"/>
+                            <constraint firstItem="h1B-VH-hF9" firstAttribute="trailing" secondItem="RTQ-qo-j3t" secondAttribute="trailing" constant="34" id="mma-AR-tst"/>
+                            <constraint firstItem="piv-gl-2FB" firstAttribute="top" secondItem="RTQ-qo-j3t" secondAttribute="bottom" constant="12" id="ttO-Ha-I2r"/>
+                            <constraint firstItem="L9t-xJ-Oor" firstAttribute="top" secondItem="kup-TG-0vY" secondAttribute="bottom" constant="8" id="vdj-RA-giK"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="top" secondItem="piv-gl-2FB" secondAttribute="bottom" constant="8" id="xDV-qJ-bct"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="leading" secondItem="kup-TG-0vY" secondAttribute="leading" id="xh0-LR-ftv"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="trailing" secondItem="piv-gl-2FB" secondAttribute="trailing" id="z8g-JE-Bao"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h1B-VH-hF9"/>
                     </view>
@@ -979,14 +973,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqy-Xs-1nz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="887"/>
+            <point key="canvasLocation" x="992.79999999999995" y="886.69950738916259"/>
         </scene>
     </scenes>
     <resources>
-        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logo_mycampus" width="1492" height="319"/>
-        <image name="wrench.fill" catalog="system" width="64" height="60"/>
+        <image name="wrench.fill" catalog="system" width="128" height="120"/>
         <namedColor name="PrimaryBlue">
             <color red="0.093999996781349182" green="0.21199999749660492" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
