@@ -15,7 +15,6 @@ class RestaurantViewController: UIViewController, TokenDelegate {
     
 
     @IBOutlet weak var RestaurantMainView: UIView!
-    @IBOutlet weak var RestaurantUtilisationMain: MBCircularProgressBarView!
     
     @IBOutlet weak var Favourites1: AMProgressBar!
     @IBOutlet weak var Favourites2: AMProgressBar!
@@ -40,6 +39,7 @@ class RestaurantViewController: UIViewController, TokenDelegate {
         restaurantData()
     }
     
+<<<<<<< HEAD
     
     var Favorites1Percent = 0.0
     var Favorites2Percent = 0.0
@@ -49,8 +49,17 @@ class RestaurantViewController: UIViewController, TokenDelegate {
     var VegePercent = 0.0
     var CafePickupLinePercent = 0.0
     var SaladPercent = 0.00
+=======
+    var Favorites1Percent = 0.46
+    var Favorites2Percent = 0.63
+    var PizzaPercent = 0.76
+    var RoundTablePercent = 0.87
+    var BowlPercent = 0.96
+    var VegePercent = 0.26
+    var CafePickupLinePercent = 0.42
+    var SaladPercent = 0.52
+>>>>>>> 194da840ef927d441fef6e853fe2ae08dd1b7731
 
-    var RestaurantUsagePercent = 28
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +68,6 @@ class RestaurantViewController: UIViewController, TokenDelegate {
 
         RestaurantMainView.layer.cornerRadius = 10
         RestaurantMainView.layer.masksToBounds = true
-        
-        self.RestaurantUtilisationMain.value = 0
     
         Favourites1.progressValue = 1
         Favourites1.setProgress(progress: CGFloat(Favorites1Percent), animated: true)
@@ -88,12 +95,6 @@ class RestaurantViewController: UIViewController, TokenDelegate {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        UIView.animate(withDuration: 2) {
-            self.RestaurantUtilisationMain.value = CGFloat(self.RestaurantUsagePercent)
-        }
-    }
     let first = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/1")
             let second = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/2")
             let third = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/3")
@@ -142,8 +143,15 @@ class RestaurantViewController: UIViewController, TokenDelegate {
                 }
                 if let data = data, let string = String(data: data, encoding: .utf8) {
                     //process data
+<<<<<<< HEAD
                     print(data, "datacheck")
                         
+=======
+                    print(data)
+                
+                    
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+>>>>>>> 194da840ef927d441fef6e853fe2ae08dd1b7731
                     
                         //!xyMycampus2020
                        

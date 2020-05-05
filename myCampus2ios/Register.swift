@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-enum ClientError: Error {
+enum EError: Error {
     case responseError
     case jsonError
     case jsonDecodeError
 }
 
-struct APIClient {
+struct Register {
     let baseURL : URL
     
     init(endp : String) {
@@ -25,29 +25,28 @@ struct APIClient {
         self.baseURL = baseURL
     }
     
-    func networkRequest(_ userModel:User, completion: @escaping(Result<User, ClientError>) -> Void) {
+    func registerReq(_ model:RegisterUser, completion: @escaping(Result<RegisterUser, EError>) -> Void) {
         do {
             var request = URLRequest(url: baseURL)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = try JSONEncoder().encode(userModel)
+            request.httpBody = try JSONEncoder().encode(model)
            // print(request.description)
             
             let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
-                if let data = data {
+                if let data = data {// check for http errors
                     do {
-                        if let text = String(bytes: data, encoding: .utf8){
+                        /*if let text = String(bytes: data, encoding: .utf8){
                             print(text)
-                            }
-                        let body = try JSONDecoder().decode(UserResponse.self, from: data)
-                        print(body.token!)
-                       (UIApplication.shared.delegate as! AppDelegate).token = body.token!
+                            }*/
+                        let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
+                        print(body)
                     } catch {
                         print("There was an error parsing data:", error)
                     }
                 }
                 if let resp = response as? HTTPURLResponse {
-                    print(resp.statusCode)
+                    print(resp.self)
                 }
 
             }

@@ -13,5 +13,5 @@ struct UserResponse : Codable {
     let exp : Int?
     let username : String?
     let email : String?
-    let roles : Array<String>
+    let roles : Array<String>?
 }
