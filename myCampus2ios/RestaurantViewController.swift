@@ -142,7 +142,7 @@ class RestaurantViewController: UIViewController, TokenDelegate {
                         //handle server error
                         
                         //show alert if request fails
-                        let alert = UIAlertController(title: "My Alert", message: "API not responding to request", preferredStyle: .alert)
+                        let alert = UIAlertController(title: "Error", message: "API not responding to request", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
                             NSLog("API error: message not in range 200..299")
                         }))
