@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-enum EError: Error {
+/* enum EError: Error {
     case responseError
     case jsonError
     case jsonDecodeError
-}
+} */
 
 struct Register {
     let baseURL : URL
@@ -25,7 +25,7 @@ struct Register {
         self.baseURL = baseURL
     }
     
-    func registerReq(_ model:RegisterUser, completion: @escaping(Result<RegisterUser, EError>) -> Void) {
+    func registerReq(_ model:RegisterUser, completion: @escaping(Result<RegisterResponse, Error>) -> Void) {
         do {
             var request = URLRequest(url: baseURL)
             request.httpMethod = "POST"
@@ -36,9 +36,9 @@ struct Register {
             let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
                 if let data = data {// check for http errors
                     do {
-                        /*if let text = String(bytes: data, encoding: .utf8){
+                        if let text = String(bytes: data, encoding: .utf8){
                             print(text)
-                            }*/
+                            }
                         let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
                         print(body)
                     } catch {

@@ -16,8 +16,8 @@ class RegisterViewController: UIViewController {
     
     var logged : String = ""
     var authToken = (UIApplication.shared.delegate as! AppDelegate).token
-   
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
@@ -52,15 +52,20 @@ class RegisterViewController: UIViewController {
             r.registerReq(bodyR, completion: {result in
                 switch result {
                 case .success(let reg):
-                   /* DispatchQueue.main.async {
-                        print(self.authToken)
-                    }*/
-                    self.performSegue(withIdentifier: "authSegue", sender: self)
-                    print("Login successful \(String(describing: reg.email))")
-                    self.activityIndicator.startAnimating()
+                    // resp = UserResponse
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Message", message: "E-mail verification sent to: \(String(describing: reg.email)).", preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
+                            self.performSegue(withIdentifier: "authSegue", sender: self)
+                        })
+                        alertController.addAction(action)
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                    self.activityIndicator.stopAnimating()
                     
-                case .failure(let error):
-                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                case .failure(let err):
+                    let alertController = UIAlertController(title: "Error", message: err.localizedDescription , preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
@@ -81,7 +86,6 @@ class RegisterViewController: UIViewController {
         if segue.identifier == "authSegue" {
             let dVC = segue.destination as? AuthViewController
             dVC?.verification = "Registration successfull"
-            print(dVC?.verification ?? "")
         }
     }
     
