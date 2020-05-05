@@ -39,7 +39,6 @@ class RestaurantViewController: UIViewController, TokenDelegate {
         restaurantData()
     }
     
-<<<<<<< HEAD
     
     var Favorites1Percent = 0.0
     var Favorites2Percent = 0.0
