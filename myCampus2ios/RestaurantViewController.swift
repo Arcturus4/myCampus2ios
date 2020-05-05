@@ -96,6 +96,21 @@ class RestaurantViewController: UIViewController, TokenDelegate {
             let sixth = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/6")
             let seventh = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/7")
             let eight = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/8")
+    
+    
+    func queueTime(value: Int, label: UILabel, actualName: String) {
+        var name = label
+        switch value {
+        case 1: name.text =  "\(actualName), time: 0-30s"
+        case 2: name.text = "\(actualName), time: 30-60s"
+        case 3: name.text = "\(actualName),  time: 1m-1m30s"
+        case 4:  name.text = "\(actualName),  time: 1m30s-2m"
+        case 5: name.text = "\(actualName),  time: 2m - 2m30s"
+            
+        default:
+            break
+        }
+    }
             
             func restaurantData(){
             print("parking1")
@@ -172,49 +187,58 @@ class RestaurantViewController: UIViewController, TokenDelegate {
                             switch indexx {
                             //witch self.index(ofAccessibilityElement: AnyIndex.self) {
                             case 0 : print("timeq1", item)
-                            self.Favourites1Label.text = "Favourites 1"
+                            //self.Favourites1Label.text = "Favourites 1"
+                            self.queueTime(value: wre, label: self.Favourites1Label, actualName: "Favourites 1")
                             self.Favorites1Percent = ((Double)(wree/100) * Double(CGFloat(20)))
                             self.Favourites1.progressValue = 1
                             self.Favourites1.setProgress(progress: CGFloat(self.Favorites1Percent), animated: true)
                                 
                             case 1 : print("timeq2", item)
-                            self.Favourites2Label.text = "Favourites 2"
+                            //elf.Favourites2Label.text = "Favourites 2"
+                            self.queueTime(value: wre, label: self.Favourites2Label, actualName: "Favourites 2")
                             self.Favourites2.progressValue = 1
                                 self.Favorites2Percent = ((Double)(wree/100) * Double(CGFloat(20)))
                                 self.Favourites2.setProgress(progress: CGFloat(self.Favorites2Percent), animated: true)
                                 
                             case 2 : print("timeq3", item)
-                            self.PizzaLabel.text = "Pizza"
+                            
+                            self.queueTime(value: wre, label: self.PizzaLabel, actualName: "Pizza")
+                        
                             self.Pizza.progressValue = 1
                             self.PizzaPercent = ((Double)(wree/100) * Double(CGFloat(20)))
                             self.Pizza.setProgress(progress: CGFloat(self.PizzaPercent), animated: true)
                                 
                             case 3 : print("timeq4", item)
-                            self.RoundTableLabel.text = "Round table"
+                            //self.RoundTableLabel.text = "Round table"
+                            self.queueTime(value: wre, label: self.RoundTableLabel, actualName: "Round table")
                             self.RoundTable.progressValue = 1
                                 self.RoundTablePercent = ((Double)(wree/100) * Double(CGFloat(20)))
                                 self.RoundTable.setProgress(progress: CGFloat(self.RoundTablePercent), animated: true)
                                 
                             case 4 : print("timeq5", item)
-                            self.BowlLabel.text = "Bowl"
+                           // self.BowlLabel.text = "Bowl"
+                            self.queueTime(value: wre, label: self.BowlLabel, actualName: "Bowl")
                             self.Bowl.progressValue = 1
                                 self.BowlPercent = ((Double)(wree/100) * Double(CGFloat(20)))
                                 self.Bowl.setProgress(progress: CGFloat(self.BowlPercent), animated: true)
                                 
                             case 5 : print("timeq6", item)
-                            self.VegeLabel.text = "Vege"
+                            //elf.VegeLabel.text = "Vege"
+                            self.queueTime(value: wre, label: self.VegeLabel, actualName: "Vege")
                             self.Vege.progressValue = 1
                                 self.VegePercent = ((Double)(wree/100) * Double(CGFloat(20)))
                             self.Vege.setProgress(progress: CGFloat(self.VegePercent), animated: true)
                                 
                             case 6 : print("timeq7", item)
-                            self.CafePickupLabel.text = "Cafe pickup line"
+                            //self.CafePickupLabel.text = "Cafe pickup line"
+                            self.queueTime(value: wre, label: self.CafePickupLabel, actualName: "Cafe pickup line")
                             self.CafePickupLine.progressValue = 1
                                 self.CafePickupLinePercent = ((Double)(wree/100) * Double(CGFloat(20)))
                                 self.CafePickupLine.setProgress(progress: CGFloat(self.CafePickupLinePercent), animated: true)
                                 
                             case 7 : print("timeq8", item)
-                            self.SaladLabel.text = "Salad/nokia coffee.k"
+                            //self.SaladLabel.text = "Salad/nokia coffee.k"
+                            self.queueTime(value: wre, label: self.SaladLabel, actualName: "Salad/nokia coffee.k")
                             self.Salad.progressValue = 1
                                 self.SaladPercent = ((Double)(wree/100) * Double(CGFloat(20)))
                                 self.Salad.setProgress(progress: CGFloat(self.SaladPercent), animated: true)
