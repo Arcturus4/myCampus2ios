@@ -16,7 +16,6 @@ class RestaurantViewController: UIViewController {
     
 
     @IBOutlet weak var RestaurantMainView: UIView!
-    @IBOutlet weak var RestaurantUtilisationMain: MBCircularProgressBarView!
     
     @IBOutlet weak var Favourites1: AMProgressBar!
     @IBOutlet weak var Favourites2: AMProgressBar!
@@ -45,17 +44,13 @@ class RestaurantViewController: UIViewController {
     var VegePercent = 0.26
     var CafePickupLinePercent = 0.42
     var SaladPercent = 0.52
-    
 
-    var RestaurantUsagePercent = 28
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         RestaurantMainView.layer.cornerRadius = 10
         RestaurantMainView.layer.masksToBounds = true
-        
-        self.RestaurantUtilisationMain.value = 0
     
         Favourites1.progressValue = 1
         Favourites1.setProgress(progress: CGFloat(Favorites1Percent), animated: true)
@@ -84,12 +79,6 @@ class RestaurantViewController: UIViewController {
         restaurantData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        UIView.animate(withDuration: 2) {
-            self.RestaurantUtilisationMain.value = CGFloat(self.RestaurantUsagePercent)
-        }
-    }
     let first = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/1")
             let second = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/2")
             let third = URL(staticString: "https://mycampus-server.karage.fi/api/common/restaurant/Midpoint/queue/3")
@@ -141,7 +130,7 @@ class RestaurantViewController: UIViewController {
                     print(data)
                 
                     
-                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
                     
                     let timeq = json?["queue_time"] as? [[String:Any]]
                     var item = timeq?[0]["description"] as? Int
