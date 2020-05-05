@@ -16,7 +16,8 @@ class RegisterViewController: UIViewController {
     
     var logged : String = ""
     var authToken = (UIApplication.shared.delegate as! AppDelegate).token
-    
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
@@ -51,12 +52,13 @@ class RegisterViewController: UIViewController {
             r.registerReq(bodyR, completion: {result in
                 switch result {
                 case .success(let reg):
-                    DispatchQueue.main.async {
+                   /* DispatchQueue.main.async {
                         print(self.authToken)
-                    }
-                   self.performSegue(withIdentifier: "loginSegue", sender: self)
+                    }*/
+                    self.performSegue(withIdentifier: "authSegue", sender: self)
                     print("Login successful \(String(describing: reg.email))")
-                    self.activityIndicator.stopAnimating()
+                    self.activityIndicator.startAnimating()
+                    
                 case .failure(let error):
                     let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                     

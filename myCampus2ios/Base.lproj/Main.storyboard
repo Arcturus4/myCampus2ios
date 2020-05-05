@@ -754,7 +754,7 @@
                                 <rect key="frame" x="34" y="467" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I6P-ce-sIZ">
                                 <rect key="frame" x="34" y="509" width="307" height="30"/>
@@ -812,12 +812,12 @@
                         <outlet property="registerEmailField" destination="fKv-cp-sac" id="JbC-Rq-4AO"/>
                         <outlet property="registerNameField" destination="30q-uf-An3" id="c3C-hT-BAD"/>
                         <outlet property="registerPassField" destination="ex8-lI-w3L" id="rcL-Tc-w3b"/>
-                        <segue destination="hpy-CE-luq" kind="showDetail" identifier="authSegue" id="2K3-Ce-2eg"/>
+                        <segue destination="hpy-CE-luq" kind="presentation" identifier="authSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Hew-Zi-4E9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="185" y="887"/>
+            <point key="canvasLocation" x="151" y="887"/>
         </scene>
         <!--Settings-->
         <scene sceneID="9uM-oL-1H0">
@@ -896,12 +896,12 @@
         <scene sceneID="AbE-su-JiY">
             <objects>
                 <viewController storyboardIdentifier="AuthScreen" id="hpy-CE-luq" customClass="AuthViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" id="WbE-la-7kT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="WbE-la-7kT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-qo-j3t">
-                                <rect key="frame" x="34" y="52" width="307" height="638"/>
+                                <rect key="frame" x="34" y="96" width="307" height="638"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kup-TG-0vY">
@@ -979,7 +979,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqy-Xs-1nz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="887"/>
+            <point key="canvasLocation" x="1071" y="887"/>
         </scene>
     </scenes>
     <resources>
