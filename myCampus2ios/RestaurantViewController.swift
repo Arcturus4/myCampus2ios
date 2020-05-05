@@ -11,8 +11,7 @@ import MBCircularProgressBar
 import AMProgressBar
 
 
-class RestaurantViewController: UIViewController {
-    
+class RestaurantViewController: UIViewController, TokenDelegate {
     
 
     @IBOutlet weak var RestaurantMainView: UIView!
@@ -36,21 +35,27 @@ class RestaurantViewController: UIViewController {
     @IBOutlet weak var CafePickupLabel: UILabel!
     @IBOutlet weak var SaladLabel: UILabel!
     
+    func setToken(token: String) {
+        print("SetToken")
+        restaurantData()
+    }
     
-    var Favorites1Percent = 0.46
-    var Favorites2Percent = 0.63
-    var PizzaPercent = 0.76
-    var RoundTablePercent = 0.87
-    var BowlPercent = 0.96
-    var VegePercent = 0.26
-    var CafePickupLinePercent = 0.42
-    var SaladPercent = 0.52
     
+    var Favorites1Percent = 0.0
+    var Favorites2Percent = 0.0
+    var PizzaPercent = 0.0
+    var RoundTablePercent = 0.0
+    var BowlPercent = 0.0
+    var VegePercent = 0.0
+    var CafePickupLinePercent = 0.0
+    var SaladPercent = 0.00
 
     var RestaurantUsagePercent = 28
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (UIApplication.shared.delegate as! AppDelegate).tokenDelegate = self
+        restaurantData()
 
         RestaurantMainView.layer.cornerRadius = 10
         RestaurantMainView.layer.masksToBounds = true
@@ -81,7 +86,6 @@ class RestaurantViewController: UIViewController {
         Salad.progressValue = 1
         Salad.setProgress(progress: CGFloat(SaladPercent), animated: true)
         
-        restaurantData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -138,40 +142,78 @@ class RestaurantViewController: UIViewController {
                 }
                 if let data = data, let string = String(data: data, encoding: .utf8) {
                     //process data
-                    print(data)
-                
+                    print(data, "datacheck")
+                        
                     
-                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-                    
-                    let timeq = json?["queue_time"] as? [[String:Any]]
-                    var item = timeq?[0]["description"] as? Int
+                        //!xyMycampus2020
+                       
+                    var item = ""
+                        let jsons = try? JSONSerialization.jsonObject(with: data, options: [])
+                        
+                        if let dictionary = jsons as? [String: Any] {
+                            
+                        if let value = dictionary["queue_time"] as? String {
+                            do{
+                                item = value
+                                print("indexed at: ", indexx, " with time value of: ", item)
+                            }
+                            }
+                        }
                     
                     
                     print("data: \(data) string:\(string)")
                     DispatchQueue.main.async {
+                        
+                        if let wre:Int = Int(item){
+                            if let wree:Double = Double(wre){
+                        
                     
                             switch indexx {
                             //witch self.index(ofAccessibilityElement: AnyIndex.self) {
-                            case 0 : print("timeq1")
-                            /*var value = Float(item ?? Int(0.1))
-                            Favourites1.setProgress(progress: CGFloat(value), animated: true)*/
-                            
-                            case 1 : print("timeq2")
+                            case 0 : print("timeq1", item)
+                            self.Favorites1Percent = ((Double)(wree/100) * Double(CGFloat(20)))
+                            self.Favourites1.progressValue = 1
+                            self.Favourites1.setProgress(progress: CGFloat(self.Favorites1Percent), animated: true)
                                 
-                            case 2 : print("timeq3")
+                            case 1 : print("timeq2", item)
+                            self.Favourites2.progressValue = 1
+                                self.Favorites2Percent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.Favourites2.setProgress(progress: CGFloat(self.Favorites2Percent), animated: true)
                                 
-                            case 3 : print("timeq4")
+                            case 2 : print("timeq3", item)
+                            self.Pizza.progressValue = 1
+                            self.RoundTablePercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.Pizza.setProgress(progress: CGFloat(self.PizzaPercent), animated: true)
                                 
-                            case 4 : print("timeq5")
+                            case 3 : print("timeq4", item)
+                            self.RoundTable.progressValue = 1
+                                self.RoundTablePercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.RoundTable.setProgress(progress: CGFloat(self.RoundTablePercent), animated: true)
                                 
-                            case 5 : print("timeq6")
+                            case 4 : print("timeq5", item)
+                            self.Bowl.progressValue = 1
+                                self.BowlPercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.Bowl.setProgress(progress: CGFloat(self.BowlPercent), animated: true)
                                 
-                            case 6 : print("timeq7")
+                            case 5 : print("timeq6", item)
+                            self.Vege.progressValue = 1
+                                self.VegePercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                            self.Vege.setProgress(progress: CGFloat(self.VegePercent), animated: true)
                                 
-                            case 7 : print("timeq8")
+                            case 6 : print("timeq7", item)
+                            self.CafePickupLine.progressValue = 1
+                                self.CafePickupLinePercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.CafePickupLine.setProgress(progress: CGFloat(self.CafePickupLinePercent), animated: true)
+                                
+                            case 7 : print("timeq8", item)
+                            self.Salad.progressValue = 1
+                                self.SaladPercent = ((Double)(wree/100) * Double(CGFloat(20)))
+                                self.Salad.setProgress(progress: CGFloat(self.SaladPercent), animated: true)
                                 
                             default : break
                             }
+                    }
+                    }
                     }
                 }
             })
