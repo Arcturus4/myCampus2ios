@@ -1,24 +1,1036 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="roboto_light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="LoginScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-ou-hqS">
+                                <rect key="frame" x="34" y="52" width="307" height="464"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wO-se-mpx">
+                                <rect key="frame" x="34" y="425" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-jq-UcO">
+                                <rect key="frame" x="34" y="467" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VGT-Ew-NG9">
+                                <rect key="frame" x="34" y="509" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LlE-60-xrK"/>
+                                    <segue destination="5zl-KV-7Kf" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mIv-TF-x22"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPh-Pe-hC9">
+                                <rect key="frame" x="34" y="547" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cke-Mq-cP6" kind="showDetail" id="84U-Ap-HSA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xdL-wM-duP">
+                                <rect key="frame" x="34" y="585" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Jv0-Na-xSV" kind="showDetail" id="Xe3-Sy-Otx"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KRO-Ib-pwq">
+                                <rect key="frame" x="164" y="631" width="44" height="66"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KRO-Ib-pwq" secondAttribute="trailing" constant="167" id="1xR-xh-TVq"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="cEa-ou-hqS" secondAttribute="leading" id="2Tu-Hj-Wbj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4wO-se-mpx" secondAttribute="trailing" constant="34" id="7X7-9A-2Yp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KRO-Ib-pwq" secondAttribute="bottom" constant="115" id="A71-gi-le6"/>
+                            <constraint firstItem="yPh-Pe-hC9" firstAttribute="top" secondItem="cEa-ou-hqS" secondAttribute="bottom" constant="31" id="CEx-lu-LiP"/>
+                            <constraint firstItem="VGT-Ew-NG9" firstAttribute="top" secondItem="b0s-jq-UcO" secondAttribute="bottom" constant="8" id="D25-Qo-75p"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="cEa-ou-hqS" secondAttribute="trailing" id="DmX-cd-Nth"/>
+                            <constraint firstItem="cEa-ou-hqS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="EUf-lA-1l9"/>
+                            <constraint firstItem="KRO-Ib-pwq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="OvG-tk-Os5"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="trailing" secondItem="VGT-Ew-NG9" secondAttribute="trailing" id="hGy-eT-YZG"/>
+                            <constraint firstItem="4wO-se-mpx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="onI-z9-sw9"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="top" secondItem="4wO-se-mpx" secondAttribute="bottom" constant="8" id="pCb-hN-2iE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cEa-ou-hqS" secondAttribute="trailing" constant="34" id="q3V-ZT-0qJ"/>
+                            <constraint firstItem="b0s-jq-UcO" firstAttribute="leading" secondItem="VGT-Ew-NG9" secondAttribute="leading" id="qx6-rM-KGd"/>
+                            <constraint firstItem="KRO-Ib-pwq" firstAttribute="top" secondItem="xdL-wM-duP" secondAttribute="bottom" constant="16" id="tav-2U-Xva"/>
+                            <constraint firstItem="cEa-ou-hqS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="tif-Xf-JWe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6iV-fu-eoZ"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="KRO-Ib-pwq" id="sxP-D0-s2G"/>
+                        <outlet property="loginButton" destination="VGT-Ew-NG9" id="pq9-uB-ps6"/>
+                        <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
+                        <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-164" y="37"/>
+        </scene>
+        <!--Restaurant-->
+        <scene sceneID="Ano-zO-Koy">
+            <objects>
+                <viewController storyboardIdentifier="restaurant" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BHS-3O-Qmy" customClass="RestaurantViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rce-jI-CVb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-lR-6rK">
+                                <rect key="frame" x="20" y="64" width="335" height="645"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WQB-qX-NeQ">
+                                        <rect key="frame" x="0.0" y="85" width="335" height="550"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guk-HP-8Fr">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPh-Sv-67u" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="35" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="Q58-Yc-Yc0"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hfg-0V-758">
+                                                <rect key="frame" x="0.0" y="70" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQN-ra-QEf" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="105" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="bnO-xw-cdZ"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9xx-Jf-7rP">
+                                                <rect key="frame" x="0.0" y="140" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnN-2L-8ni" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="175" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="WiK-1N-dv9"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7DA-q8-Gee">
+                                                <rect key="frame" x="0.0" y="210" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nYv-0E-cYM" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="245" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="LPF-8i-Nsa"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ejJ-Ls-iNJ">
+                                                <rect key="frame" x="0.0" y="280" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUk-gP-u6c" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="315" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="m3w-53-PuB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RrY-ea-tgd">
+                                                <rect key="frame" x="0.0" y="350" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-YE-yPZ" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="385" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="YAA-zw-jCP"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjf-qP-Fxb">
+                                                <rect key="frame" x="0.0" y="420" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-AK-a9P" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="455" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="CUC-xI-rlj"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2re-Gg-IYH">
+                                                <rect key="frame" x="0.0" y="490" width="335" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smX-bm-FNb" customClass="AMProgressBar" customModule="AMProgressBar">
+                                                <rect key="frame" x="0.0" y="525" width="335" height="25"/>
+                                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                                <color key="tintColor" name="PrimaryDarkBlue"/>
+                                                <viewLayoutGuide key="safeArea" id="dKh-U3-JZi"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="barColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideStripes" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="PrimaryBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Utilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-NS-JVw">
+                                        <rect key="frame" x="54" y="30" width="227" height="25"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                <color key="tintColor" name="PrimaryBlue"/>
+                                <constraints>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="top" secondItem="sqs-NS-JVw" secondAttribute="bottom" constant="30" id="0Mr-7T-k4e"/>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="top" secondItem="sqs-NS-JVw" secondAttribute="bottom" constant="30" id="ASP-Ob-kgg"/>
+                                    <constraint firstAttribute="bottom" secondItem="WQB-qX-NeQ" secondAttribute="bottom" constant="10" id="Dqr-fy-rNU"/>
+                                    <constraint firstAttribute="trailing" secondItem="WQB-qX-NeQ" secondAttribute="trailing" id="FsF-5Z-ri0"/>
+                                    <constraint firstAttribute="trailing" secondItem="sqs-NS-JVw" secondAttribute="trailing" constant="54" id="NeO-Kb-8n8"/>
+                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="top" secondItem="wo4-lR-6rK" secondAttribute="top" constant="30" id="Sd8-7A-P7G"/>
+                                    <constraint firstItem="WQB-qX-NeQ" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" id="Zna-Hn-kFp"/>
+                                    <constraint firstItem="sqs-NS-JVw" firstAttribute="leading" secondItem="wo4-lR-6rK" secondAttribute="leading" constant="54" id="k3l-EO-ie4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="CA8-7t-iAx" firstAttribute="trailing" secondItem="wo4-lR-6rK" secondAttribute="trailing" constant="20" id="2f7-Ea-WOe"/>
+                            <constraint firstItem="wo4-lR-6rK" firstAttribute="bottom" secondItem="CA8-7t-iAx" secondAttribute="bottom" constant="-20" id="cLU-YY-3QO"/>
+                            <constraint firstItem="wo4-lR-6rK" firstAttribute="leading" secondItem="CA8-7t-iAx" secondAttribute="leading" constant="20" id="gNo-HC-kzE"/>
+                            <constraint firstItem="wo4-lR-6rK" firstAttribute="top" secondItem="CA8-7t-iAx" secondAttribute="top" constant="20" id="yf2-bS-lcy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CA8-7t-iAx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="info.circle.fill" catalog="system" id="iLg-kJ-a1D"/>
+                    <connections>
+                        <outlet property="Bowl" destination="xUk-gP-u6c" id="E7d-Zi-eSw"/>
+                        <outlet property="BowlLabel" destination="ejJ-Ls-iNJ" id="oZh-f5-YHJ"/>
+                        <outlet property="CafePickupLabel" destination="vjf-qP-Fxb" id="lIV-cX-7Eu"/>
+                        <outlet property="CafePickupLine" destination="9OO-AK-a9P" id="Xeg-yI-4e8"/>
+                        <outlet property="Favourites1" destination="tPh-Sv-67u" id="1rQ-68-adc"/>
+                        <outlet property="Favourites1Label" destination="guk-HP-8Fr" id="dox-Vq-uJk"/>
+                        <outlet property="Favourites2" destination="GQN-ra-QEf" id="vBj-Ya-acl"/>
+                        <outlet property="Favourites2Label" destination="Hfg-0V-758" id="DaU-gQ-Jl7"/>
+                        <outlet property="Pizza" destination="ZnN-2L-8ni" id="oZk-PN-iqz"/>
+                        <outlet property="PizzaLabel" destination="9xx-Jf-7rP" id="dHI-h1-65v"/>
+                        <outlet property="RestaurantMainView" destination="wo4-lR-6rK" id="bNE-fG-5A7"/>
+                        <outlet property="RoundTable" destination="nYv-0E-cYM" id="XvA-Jy-Ucd"/>
+                        <outlet property="RoundTableLabel" destination="7DA-q8-Gee" id="QsA-4q-yJ5"/>
+                        <outlet property="Salad" destination="smX-bm-FNb" id="jTL-u9-AMB"/>
+                        <outlet property="SaladLabel" destination="2re-Gg-IYH" id="k2u-Wc-wMR"/>
+                        <outlet property="Vege" destination="H5x-YE-yPZ" id="bcz-Vh-TRQ"/>
+                        <outlet property="VegeLabel" destination="RrY-ea-tgd" id="dXZ-Dd-tLs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S69-jd-bFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="165.51724137931035"/>
+        </scene>
+        <!--Parking-->
+        <scene sceneID="N9E-kp-ORP">
+            <objects>
+                <viewController storyboardIdentifier="parking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u8x-rE-dsn" customClass="ParkingViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="parking" id="Y30-NZ-uiS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-jI-IVT">
+                                <rect key="frame" x="20" y="64" width="335" height="645"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-gI-XhQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="153.66666666666666"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-D1-xZl" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-v2-mFt">
+                                                <rect key="frame" x="120" y="7.9999999999999982" width="95" height="23.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="bottom" secondItem="QeA-D1-xZl" secondAttribute="bottom" id="8gC-lb-uRa"/>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="trailing" secondItem="ecd-v2-mFt" secondAttribute="trailing" constant="120" id="NHA-ND-QNN"/>
+                                            <constraint firstItem="QeA-D1-xZl" firstAttribute="top" secondItem="hcT-w3-DAI" secondAttribute="top" constant="35" id="QfU-MC-cby"/>
+                                            <constraint firstItem="QeA-D1-xZl" firstAttribute="leading" secondItem="hcT-w3-DAI" secondAttribute="leading" constant="100" id="d1T-Lf-7nM"/>
+                                            <constraint firstItem="hcT-w3-DAI" firstAttribute="trailing" secondItem="QeA-D1-xZl" secondAttribute="trailing" constant="100" id="itG-Ru-VUs"/>
+                                            <constraint firstItem="ecd-v2-mFt" firstAttribute="top" secondItem="hcT-w3-DAI" secondAttribute="top" constant="8" id="mgA-0p-n8b"/>
+                                            <constraint firstItem="ecd-v2-mFt" firstAttribute="leading" secondItem="hcT-w3-DAI" secondAttribute="leading" constant="120" id="wdI-tJ-sge"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="hcT-w3-DAI"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
+                                        <rect key="frame" x="0.0" y="163.66666666666666" width="335" height="153.99999999999997"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEf-hP-1Ga" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000028" width="135" height="119"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-qO-fuC">
+                                                <rect key="frame" x="88" y="7.9999999999999982" width="158" height="23.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="bottom" secondItem="jEf-hP-1Ga" secondAttribute="bottom" id="0hX-bK-0l9"/>
+                                            <constraint firstItem="jEf-hP-1Ga" firstAttribute="leading" secondItem="2bt-D7-IXe" secondAttribute="leading" constant="100" id="P7G-CH-MK3"/>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="trailing" secondItem="jEf-hP-1Ga" secondAttribute="trailing" constant="100" id="aEY-Dz-t2J"/>
+                                            <constraint firstItem="PJJ-qO-fuC" firstAttribute="top" secondItem="2bt-D7-IXe" secondAttribute="top" constant="8" id="cjF-sJ-lIQ"/>
+                                            <constraint firstItem="PJJ-qO-fuC" firstAttribute="leading" secondItem="2bt-D7-IXe" secondAttribute="leading" constant="88" id="gUL-Cf-h1W"/>
+                                            <constraint firstItem="2bt-D7-IXe" firstAttribute="trailing" secondItem="PJJ-qO-fuC" secondAttribute="trailing" constant="89" id="huk-Mq-lRh"/>
+                                            <constraint firstItem="jEf-hP-1Ga" firstAttribute="top" secondItem="2bt-D7-IXe" secondAttribute="top" constant="35" id="zOS-Fi-7n4"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="2bt-D7-IXe"/>
+                                    </view>
+                                    <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Tw-xuV">
+                                        <rect key="frame" x="0.0" y="327.66666666666669" width="335" height="153.66666666666669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-Sj-JCg" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" name="PrimaryDarkBlue"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Inside" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm8-Uy-pTj">
+                                                <rect key="frame" x="79" y="7.9999999999999982" width="177" height="23.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="PrimaryBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="VzM-Sj-JCg" firstAttribute="top" secondItem="PLz-cg-DFY" secondAttribute="top" constant="35" id="4ab-rm-WNz"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="bottom" secondItem="VzM-Sj-JCg" secondAttribute="bottom" id="V1O-0X-GCN"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="trailing" secondItem="Dm8-Uy-pTj" secondAttribute="trailing" constant="79" id="WbA-2U-GcD"/>
+                                            <constraint firstItem="Dm8-Uy-pTj" firstAttribute="leading" secondItem="PLz-cg-DFY" secondAttribute="leading" constant="79" id="d4L-zr-w6n"/>
+                                            <constraint firstItem="VzM-Sj-JCg" firstAttribute="leading" secondItem="PLz-cg-DFY" secondAttribute="leading" constant="100" id="dfd-Az-AL5"/>
+                                            <constraint firstItem="PLz-cg-DFY" firstAttribute="trailing" secondItem="VzM-Sj-JCg" secondAttribute="trailing" constant="100" id="fVN-XJ-sZw"/>
+                                            <constraint firstItem="Dm8-Uy-pTj" firstAttribute="top" secondItem="PLz-cg-DFY" secondAttribute="top" constant="8" id="sfX-ri-vaF"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="PLz-cg-DFY"/>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-8e-Xec" userLabel="ParkingElectric">
+                                        <rect key="frame" x="0.0" y="491.33333333333343" width="335" height="153.66666666666669"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVi-IB-Qjx" customClass="MBCircularProgressBarView">
+                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                        <real key="value" value="100"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="countdown" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parking P10 - Electric" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAU-me-VUx">
+                                                <rect key="frame" x="73" y="7.9999999999999982" width="189" height="23.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="EVi-IB-Qjx" firstAttribute="top" secondItem="zid-Tp-HQZ" secondAttribute="top" constant="35" id="5pO-xD-0Gn"/>
+                                            <constraint firstItem="zid-Tp-HQZ" firstAttribute="trailing" secondItem="EVi-IB-Qjx" secondAttribute="trailing" constant="100" id="FjG-eN-GVd"/>
+                                            <constraint firstItem="zid-Tp-HQZ" firstAttribute="trailing" secondItem="PAU-me-VUx" secondAttribute="trailing" constant="73" id="Ohg-PH-pSl"/>
+                                            <constraint firstItem="PAU-me-VUx" firstAttribute="leading" secondItem="zid-Tp-HQZ" secondAttribute="leading" constant="73" id="Pik-NZ-9wi"/>
+                                            <constraint firstItem="PAU-me-VUx" firstAttribute="top" secondItem="zid-Tp-HQZ" secondAttribute="top" constant="8" id="qJK-PH-ZDo"/>
+                                            <constraint firstItem="EVi-IB-Qjx" firstAttribute="leading" secondItem="zid-Tp-HQZ" secondAttribute="leading" constant="100" id="s9J-Tp-lLW"/>
+                                            <constraint firstAttribute="bottom" secondItem="EVi-IB-Qjx" secondAttribute="bottom" id="vWO-2I-Roj"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="zid-Tp-HQZ"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="top" secondItem="Yaz-j6-Jrx" secondAttribute="top" constant="20" id="AxK-lf-7RY"/>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="bottom" secondItem="Yaz-j6-Jrx" secondAttribute="bottom" constant="-20" id="PdA-1A-WIX"/>
+                            <constraint firstItem="6Bi-jI-IVT" firstAttribute="leading" secondItem="Yaz-j6-Jrx" secondAttribute="leading" constant="20" id="RaO-IU-SGH"/>
+                            <constraint firstItem="Yaz-j6-Jrx" firstAttribute="trailing" secondItem="6Bi-jI-IVT" secondAttribute="trailing" constant="20" id="ivo-er-VKZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yaz-j6-Jrx"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Parking" image="location.circle.fill" catalog="system" id="ZLZ-0o-CPE"/>
+                    <connections>
+                        <outlet property="ParkinP5Progress" destination="QeA-D1-xZl" id="YwO-7k-t0e"/>
+                        <outlet property="ParkingElectric" destination="Ewq-8e-Xec" id="6hs-Me-365"/>
+                        <outlet property="ParkingElectricProgress" destination="EVi-IB-Qjx" id="NCi-2O-2Fy"/>
+                        <outlet property="ParkingP10Inside" destination="VzM-Sj-JCg" id="ACp-Yc-BlY"/>
+                        <outlet property="ParkingP10InsideProgress" destination="VzM-Sj-JCg" id="F55-zr-Qj8"/>
+                        <outlet property="ParkingP10Top" destination="5vH-G3-4tO" id="EY9-XN-jWk"/>
+                        <outlet property="ParkingP10TopProgress" destination="jEf-hP-1Ga" id="840-5W-Y9T"/>
+                        <outlet property="ParkingP5" destination="DCU-gI-XhQ" id="chV-Gq-Whz"/>
+                        <outlet property="ParkingStackView" destination="6Bi-jI-IVT" id="IYG-r8-X0V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMP-HB-3jk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="-562"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ELr-iF-Y6w">
+            <objects>
+                <tabBarController storyboardIdentifier="barcontroller" extendedLayoutIncludesOpaqueBars="YES" id="5zl-KV-7Kf" customClass="TabBarController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DT5-20-mSs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" name="PrimaryDarkBlue"/>
+                        <color key="barTintColor" name="PrimaryDarkBlue"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="u8x-rE-dsn" kind="relationship" relationship="viewControllers" id="gHH-G9-383"/>
+                        <segue destination="BHS-3O-Qmy" kind="relationship" relationship="viewControllers" id="Aj1-oy-QTJ"/>
+                        <segue destination="h0P-6I-BHd" kind="relationship" relationship="viewControllers" id="pWf-O4-EUH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2V7-mw-4Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="190"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="h7o-g4-B7y">
+            <objects>
+                <viewController storyboardIdentifier="RegisterScreen" id="cke-Mq-cP6" customClass="RegisterViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="oq2-sg-CP3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="WcQ-a6-sxF">
+                                <rect key="frame" x="34" y="52" width="307" height="638"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ex8-lI-w3L">
+                                <rect key="frame" x="34" y="786" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I6P-ce-sIZ">
+                                <rect key="frame" x="34" y="509" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButton:" destination="cke-Mq-cP6" eventType="touchUpInside" id="fMw-6p-wx3"/>
+                                    <segue destination="hpy-CE-luq" kind="showDetail" identifier="authSegue" id="eXx-qZ-S1E"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-cp-sac">
+                                <rect key="frame" x="34" y="702" width="307" height="34"/>
+                                <color key="textColor" name="PrimaryDarkBlue"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-fk-uNM">
+                                <rect key="frame" x="168" y="559" width="42" height="32"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30q-uf-An3">
+                                <rect key="frame" x="34" y="744" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="ex8-lI-w3L" secondAttribute="leading" id="6xH-qv-hTh"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="trailing" secondItem="fKv-cp-sac" secondAttribute="trailing" id="B4z-xq-RyT"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="fKv-cp-sac" secondAttribute="trailing" id="Cm7-SY-ZoU"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="leading" secondItem="fKv-cp-sac" secondAttribute="leading" id="I3n-nl-iEg"/>
+                            <constraint firstItem="ex8-lI-w3L" firstAttribute="top" secondItem="30q-uf-An3" secondAttribute="bottom" constant="8" id="IGH-Pw-JAc"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="Klz-VR-cH0"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="top" secondItem="fKv-cp-sac" secondAttribute="bottom" constant="8" id="NAg-6B-9c2"/>
+                            <constraint firstItem="fKv-cp-sac" firstAttribute="top" secondItem="WcQ-a6-sxF" secondAttribute="bottom" constant="12" id="Q2d-Jz-gt8"/>
+                            <constraint firstItem="DWm-46-YlA" firstAttribute="bottom" secondItem="gzR-fk-uNM" secondAttribute="bottom" constant="133" id="Qle-up-8fw"/>
+                            <constraint firstItem="ex8-lI-w3L" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="RYK-SJ-rBe"/>
+                            <constraint firstItem="I6P-ce-sIZ" firstAttribute="width" secondItem="fKv-cp-sac" secondAttribute="width" id="S1d-bu-3NM"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="top" secondItem="DWm-46-YlA" secondAttribute="top" constant="52" id="ZG1-vT-TAO"/>
+                            <constraint firstItem="30q-uf-An3" firstAttribute="trailing" secondItem="ex8-lI-w3L" secondAttribute="trailing" id="pOk-IC-FJc"/>
+                            <constraint firstItem="ex8-lI-w3L" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="34" id="rHJ-Zg-WW4"/>
+                            <constraint firstItem="gzR-fk-uNM" firstAttribute="leading" secondItem="DWm-46-YlA" secondAttribute="leading" constant="168" id="rJV-91-Gc7"/>
+                            <constraint firstItem="WcQ-a6-sxF" firstAttribute="leading" secondItem="fKv-cp-sac" secondAttribute="leading" id="snW-it-VyP"/>
+                            <constraint firstItem="DWm-46-YlA" firstAttribute="trailing" secondItem="gzR-fk-uNM" secondAttribute="trailing" constant="165" id="upg-43-ZcV"/>
+                            <constraint firstItem="gzR-fk-uNM" firstAttribute="top" secondItem="I6P-ce-sIZ" secondAttribute="bottom" constant="20" id="yup-5Z-yyK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DWm-46-YlA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bQB-k2-H7Y"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gzR-fk-uNM" id="DTi-Sc-1Xp"/>
+                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="JbC-Rq-4AO"/>
+                        <outlet property="registerNameField" destination="30q-uf-An3" id="c3C-hT-BAD"/>
+                        <outlet property="registerPassField" destination="ex8-lI-w3L" id="rcL-Tc-w3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="886.69950738916259"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="9uM-oL-1H0">
+            <objects>
+                <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h0P-6I-BHd" customClass="SettingsViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gOx-RY-z6t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QOE-bt-1l3">
+                                <rect key="frame" x="34" y="544" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLogOut:" destination="h0P-6I-BHd" eventType="touchUpInside" id="5Mk-ig-bPp"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="TT2-Ec-nla"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-2y-MfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="-561"/>
+        </scene>
+        <!--Reset View Controller-->
+        <scene sceneID="J2n-3D-AcQ">
+            <objects>
+                <viewController storyboardIdentifier="ResetPasswordScreen" id="gYM-NI-Kaz" customClass="ResetViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="HtN-zh-zCv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="bR9-ag-bQY">
+                                <rect key="frame" x="34" y="52" width="307" height="638"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7B-wY-4Rp">
+                                <rect key="frame" x="34" y="425" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Token" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2M-Ei-m6K">
+                                <rect key="frame" x="33" y="509" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W1A-HT-yCQ">
+                                <rect key="frame" x="33" y="551" width="307" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="gYM-NI-Kaz" eventType="touchUpInside" id="BcA-17-pVo"/>
+                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backtoLoginSegue" id="XRM-OM-cV2"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chs-tZ-FLP">
+                                <rect key="frame" x="34" y="467" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Aw-25s">
+                                <rect key="frame" x="34" y="702" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="leading" secondItem="bR9-ag-bQY" secondAttribute="leading" id="0Gd-s3-qrc"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="leading" secondItem="RpV-qc-VI8" secondAttribute="leading" constant="34" id="2lA-Rr-4ZD"/>
+                            <constraint firstItem="bR9-ag-bQY" firstAttribute="top" secondItem="RpV-qc-VI8" secondAttribute="top" constant="52" id="5Wk-dF-ghq"/>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bR9-ag-bQY" secondAttribute="leading" id="AoO-UI-s6f"/>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bR9-ag-bQY" secondAttribute="trailing" id="KSI-tZ-CA5"/>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="top" secondItem="bR9-ag-bQY" secondAttribute="bottom" constant="12" id="NV0-dJ-yLc"/>
+                            <constraint firstItem="V2M-Ei-m6K" firstAttribute="leading" secondItem="W1A-HT-yCQ" secondAttribute="leading" id="Nex-mS-niO"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="centerX" secondItem="axU-Aw-25s" secondAttribute="centerX" id="PEg-ZE-Y31"/>
+                            <constraint firstItem="V2M-Ei-m6K" firstAttribute="top" secondItem="Chs-tZ-FLP" secondAttribute="bottom" constant="8" id="SzN-AT-CUo"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="leading" secondItem="axU-Aw-25s" secondAttribute="leading" id="cTK-Ih-Rig"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="top" secondItem="y7B-wY-4Rp" secondAttribute="bottom" constant="8" id="g7v-qB-TgP"/>
+                            <constraint firstItem="V2M-Ei-m6K" firstAttribute="trailing" secondItem="W1A-HT-yCQ" secondAttribute="trailing" id="nWX-e7-BfE"/>
+                            <constraint firstItem="RpV-qc-VI8" firstAttribute="trailing" secondItem="bR9-ag-bQY" secondAttribute="trailing" constant="34" id="o0b-db-T7a"/>
+                            <constraint firstItem="Chs-tZ-FLP" firstAttribute="centerX" secondItem="y7B-wY-4Rp" secondAttribute="centerX" id="oY5-gs-lxa"/>
+                            <constraint firstItem="axU-Aw-25s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y7B-wY-4Rp" secondAttribute="leading" id="pav-Xo-n1D"/>
+                            <constraint firstItem="W1A-HT-yCQ" firstAttribute="top" secondItem="V2M-Ei-m6K" secondAttribute="bottom" constant="8" id="w30-LJ-gf0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RpV-qc-VI8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jda-aN-qID"/>
+                    <connections>
+                        <outlet property="confirmTextField" destination="Chs-tZ-FLP" id="Nct-f5-4CW"/>
+                        <outlet property="passTextField" destination="y7B-wY-4Rp" id="1na-68-HOT"/>
+                        <outlet property="rTextField" destination="axU-Aw-25s" id="JVo-hb-WdD"/>
+                        <outlet property="tokenField" destination="V2M-Ei-m6K" id="E4U-k0-WfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-aS-R5c" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1983.2" y="343.5960591133005"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="AbE-su-JiY">
+            <objects>
+                <viewController storyboardIdentifier="AuthScreen" id="hpy-CE-luq" customClass="AuthViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="WbE-la-7kT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-qo-j3t">
+                                <rect key="frame" x="34" y="52" width="307" height="319"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpJ-Uw-XmL">
+                                <rect key="frame" x="33" y="391" width="307" height="34"/>
+                                <color key="textColor" name="PrimaryDarkBlue"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Token" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xrb-OP-5H9">
+                                <rect key="frame" x="33" y="433" width="307" height="34"/>
+                                <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="L9t-xJ-Oor">
+                                <rect key="frame" x="33" y="475" width="307.00000000000017" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="verifyButton:" destination="hpy-CE-luq" eventType="touchUpInside" id="AYK-Sm-TZQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="centerX" secondItem="L9t-xJ-Oor" secondAttribute="centerX" id="1sV-Pv-22P"/>
+                            <constraint firstItem="xrb-OP-5H9" firstAttribute="top" secondItem="PpJ-Uw-XmL" secondAttribute="bottom" constant="8" id="2PW-GA-CoB"/>
+                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="top" secondItem="h1B-VH-hF9" secondAttribute="top" constant="52" id="K1h-Y8-Lrs"/>
+                            <constraint firstItem="xrb-OP-5H9" firstAttribute="leading" secondItem="L9t-xJ-Oor" secondAttribute="leading" id="PNe-jV-0PY"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="trailing" secondItem="xrb-OP-5H9" secondAttribute="trailing" id="U4E-qw-44y"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="centerX" secondItem="L9t-xJ-Oor" secondAttribute="centerX" id="W1E-cN-Xtd"/>
+                            <constraint firstItem="L9t-xJ-Oor" firstAttribute="top" secondItem="xrb-OP-5H9" secondAttribute="bottom" constant="8" id="a0g-cR-qze"/>
+                            <constraint firstItem="RTQ-qo-j3t" firstAttribute="leading" secondItem="h1B-VH-hF9" secondAttribute="leading" constant="34" id="iM2-bc-9jv"/>
+                            <constraint firstItem="PpJ-Uw-XmL" firstAttribute="leading" secondItem="xrb-OP-5H9" secondAttribute="leading" id="ye6-yC-ZiY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h1B-VH-hF9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="apY-lf-qpf"/>
+                    <connections>
+                        <outlet property="verificationEmail" destination="PpJ-Uw-XmL" id="CzG-j6-DkQ"/>
+                        <outlet property="verificationToken" destination="xrb-OP-5H9" id="HCu-53-AWd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqy-Xs-1nz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992.79999999999995" y="886.69950738916259"/>
+        </scene>
+        <!--Forgot Pass Controller-->
+        <scene sceneID="Rdw-Bx-XyK">
+            <objects>
+                <viewController storyboardIdentifier="forgotPassScreen" id="Jv0-Na-xSV" customClass="ForgotPassController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="TqS-RK-ilX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="jfO-wP-hYM">
+                                <rect key="frame" x="34" y="52" width="307" height="638"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" preservesSuperviewLayoutMargins="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Wsm-f1-dd3">
+                                <rect key="frame" x="166" y="542" width="43" height="85"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xwe-NW-kXg">
+                                <rect key="frame" x="33" y="456" width="307.00000000000017" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.21176470589999999" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <state key="normal" title="Reset &amp; Continue">
+                                    <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotButton:" destination="Jv0-Na-xSV" eventType="touchUpInside" id="HMi-2q-JJO"/>
+                                    <segue destination="gYM-NI-Kaz" kind="showDetail" identifier="resetpassSegue" id="8kv-yk-Ki0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-Zx-vKT">
+                                <rect key="frame" x="33" y="398" width="307" height="34"/>
+                                <color key="textColor" name="PrimaryDarkBlue"/>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wsm-f1-dd3" firstAttribute="leading" secondItem="cYW-wt-59U" secondAttribute="leading" constant="166" id="3Tg-nb-ADQ"/>
+                            <constraint firstItem="cYW-wt-59U" firstAttribute="bottom" secondItem="Wsm-f1-dd3" secondAttribute="bottom" constant="97" id="3uO-2k-h4D"/>
+                            <constraint firstItem="xwe-NW-kXg" firstAttribute="top" secondItem="JWb-Zx-vKT" secondAttribute="bottom" constant="24" id="8pm-R5-gWI"/>
+                            <constraint firstItem="jfO-wP-hYM" firstAttribute="top" secondItem="cYW-wt-59U" secondAttribute="top" constant="52" id="Jjd-oP-L8C"/>
+                            <constraint firstItem="JWb-Zx-vKT" firstAttribute="trailing" secondItem="xwe-NW-kXg" secondAttribute="trailing" id="UlZ-ff-aJp"/>
+                            <constraint firstItem="cYW-wt-59U" firstAttribute="trailing" secondItem="jfO-wP-hYM" secondAttribute="trailing" constant="34" id="ffI-j9-Y8z"/>
+                            <constraint firstItem="JWb-Zx-vKT" firstAttribute="leading" secondItem="xwe-NW-kXg" secondAttribute="leading" id="k5V-7h-3Lu"/>
+                            <constraint firstItem="cYW-wt-59U" firstAttribute="trailing" secondItem="Wsm-f1-dd3" secondAttribute="trailing" constant="166" id="mt6-3W-yox"/>
+                            <constraint firstItem="Wsm-f1-dd3" firstAttribute="top" secondItem="xwe-NW-kXg" secondAttribute="bottom" constant="56" id="vN8-2K-jn4"/>
+                            <constraint firstItem="jfO-wP-hYM" firstAttribute="leading" secondItem="cYW-wt-59U" secondAttribute="leading" constant="34" id="wPg-7C-1US"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cYW-wt-59U"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FSb-cp-aef"/>
+                    <connections>
+                        <outlet property="forgotEmailField" destination="JWb-Zx-vKT" id="u2x-aI-nc1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4W-mP-PbT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790" y="887"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="location.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="logo_mycampus" width="1492" height="319"/>
+        <image name="wrench.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="PrimaryBlue">
+            <color red="0.093999996781349182" green="0.21199999749660492" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryDarkBlue">
+            <color red="0.075000002980232239" green="0.16899999976158142" blue="0.46299999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XRM-OM-cV2"/>
+    </inferredMetricsTieBreakers>
 </document>
