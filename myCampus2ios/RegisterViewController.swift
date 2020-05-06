@@ -33,51 +33,53 @@ class RegisterViewController: UIViewController {
         let bodyR = RegisterUser(email: registerEmailField.text!, name: registerNameField.text!, password: registerPassField.text!)
         let r = Register(endp: "/auth/signup")
         
-        if (registerEmailField.text == "" || registerPassField.text == "" || registerNameField.text == "") {
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+        if (registerEmailField.text == "") || (registerPassField.text == "") || (registerNameField.text == "") {
+            self.showAlert(showText: "Please fill the required fields")
+            print("E-mail \(String(describing: registerEmailField)), name \(String(describing: registerNameField)) or password \(String(describing: registerPassField)) is empty")
             
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
             self.activityIndicator.stopAnimating()
-            
-        } else if (!registerEmailField.text!.isValidEmail || !registerPassField.text!.isValidPassword) {
-            let alertController = UIAlertController(title: "Error", message: "Please check your email, name and password.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            return
+        } else if (registerEmailField.text!.isValidEmail || registerPassField.text!.isValidPassword) {
+          print("Please check your email \(String(describing: registerEmailField)) and password \(String(describing: registerPassField))")
+            self.showAlert(showText: "Check your e-mail and password")
             self.activityIndicator.stopAnimating()
+            return
         } else {
+            self.activityIndicator.stopAnimating()
             r.registerReq(bodyR, completion: {result in
                 switch result {
                 case .success(let reg):
-                    // resp = UserResponse
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Message", message: "E-mail verification sent to: \(String(describing: reg.email)).", preferredStyle: .alert)
-                        
-                        let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
-                            self.performSegue(withIdentifier: "authSegue", sender: self)
-                        })
-                        alertController.addAction(action)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                    self.activityIndicator.stopAnimating()
+                    print(reg.msg ?? "")
+                    self.performSegue(withIdentifier: "authSegue", sender: self)
+                    return
                     
                 case .failure(let err):
-                    let alertController = UIAlertController(title: "Error", message: err.localizedDescription , preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                    self.activityIndicator.stopAnimating()
+                    print(err.localizedDescription)
+                    self.showAlert(showText: "Something went wrong.. Try again!")
+                    return
                 }
             })
             
         }
         
+        
+    }
+    
+    func showAlert(showText: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
+                print("OK button tapped")
+                
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                // self.performSegue(withIdentifier: "authSegue", sender: self)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     
@@ -90,5 +92,7 @@ class RegisterViewController: UIViewController {
     }
     
     
+    
 }
+
 

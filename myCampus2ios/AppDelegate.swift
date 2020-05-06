@@ -12,12 +12,19 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-   var token = "" {didSet{tokenDelegate?.setToken(token: token)}}
+    var token: String? = "" {didSet{tokenDelegate?.setToken(token: token ?? "")}}
     
     var tokenDelegate: TokenDelegate?
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if token != nil {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let home = mainStoryBoard.instantiateViewController(identifier: "parking") as! ParkingViewController
+            self.window?.rootViewController = home
+        }
         return true
     }
 

@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController, TokenDelegate {
     
     
     @IBAction func buttonLogOut(_ sender: Any) {
-        tokenPayload.removeAll()
+        tokenPayload?.removeAll()
          self.performSegue(withIdentifier: "logoutSegue", sender: self)
         
     }
