@@ -34,12 +34,11 @@ class ParkingViewController: UIViewController, TokenDelegate {
     
     @IBOutlet weak var ParkingElectric: UIView!
     @IBOutlet weak var ParkingElectricProgress: MBCircularProgressBarView!
-    
-    var loggedIn : String = ""
+    var loginT : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(loggedIn)
+        print(loginT)
         (UIApplication.shared.delegate as! AppDelegate).tokenDelegate = self
         
         //Initialize Animations

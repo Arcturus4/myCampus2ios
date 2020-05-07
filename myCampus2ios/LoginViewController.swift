@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginEmailText: UITextField!
     @IBOutlet weak var loginPassText: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
    
@@ -22,15 +21,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.style = .large
+       // activityIndicator.style = .large
         activityIndicator.hidesWhenStopped = true
         
     }
     
     
     @IBAction func LoginBtn(_ sender: Any) {
-        self.activityIndicator.color = .white
-        self.activityIndicator.startAnimating()
+       // self.activityIndicator.color = .white
+       // self.activityIndicator.startAnimating()
         let body = User(email: loginEmailText.text!, password: loginPassText.text!)
         let post = APIClient(endp: "/auth/login")
         
@@ -41,7 +40,7 @@ class LoginViewController: UIViewController {
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-            self.activityIndicator.stopAnimating()
+           // self.activityIndicator.stopAnimating()
             // Checking if e-mail and password fields are not valid, then
             // a false alert will appear
         } else if (!loginEmailText.text!.isValidEmail || !loginPassText.text!.isValidPassword) {
@@ -50,22 +49,22 @@ class LoginViewController: UIViewController {
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
-            self.activityIndicator.stopAnimating()
+            // self.activityIndicator.stopAnimating()
         }
             // If every field contains an valid e-mail and password,
             // then a network request will be called and executed
         else {
             post.networkRequest(body, completion: {result in
+               // self.activityIndicator.stopAnimating()
                 // Checking between successful response and failure from the server
                 switch result {
                 case .success(let body):
                     // If request is successful, then we save the token
                     DispatchQueue.main.async {
                         print(self.accessToken ?? "")
+                        self.performSegue(withIdentifier: "LoginToTabBar", sender: self)
                     }
-
                     print("Login successful")
-                    self.activityIndicator.stopAnimating()
                     print(body.email)
                 case .failure(let error):
                     let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -75,7 +74,7 @@ class LoginViewController: UIViewController {
                     
                     self.present(alertController, animated: true, completion: nil)
                     
-                    self.activityIndicator.stopAnimating()
+                    // self.activityIndicator.stopAnimating()
                 }
             })
             
@@ -84,19 +83,19 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBSegueAction func presentLoginToTabBar(_ coder: NSCoder) -> TabBarController? {
+   /* @IBSegueAction func presentLoginToTabBar(_ coder: NSCoder) -> TabBarController? {
            return TabBarController(coder: coder)
-       }
+       } */
     
     
     
     
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginSegue" {
-            let destVC = segue.destination as? ParkingViewController
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoginToTabBar" {
+            let destVC = segue.destination as? TabBarController
             destVC?.loggedIn = "Logged in"
         }
-    }*/
+    }
     
 }
 

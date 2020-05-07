@@ -9,10 +9,12 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
+    var loggedIn : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(loggedIn)
         
         // Do any additional setup after loading the view.
     }
