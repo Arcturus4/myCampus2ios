@@ -11,23 +11,61 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerEmailField: UITextField!
     @IBOutlet weak var registerNameField: UITextField!
     @IBOutlet weak var registerPassField: UITextField!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var activityInd: UIActivityIndicatorView!
     var logged : String = ""
     var authToken = (UIApplication.shared.delegate as! AppDelegate).token
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.hidesWhenStopped = true
+        activityInd.hidesWhenStopped = true
         
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func registerButton(_ sender: Any) {
+        self.activityInd.color = .white
+        self.activityInd.startAnimating()
+        
+        let check = fieldCheck(field1: registerEmailField, field2: registerNameField, field3: registerPassField)
+        if (!check) {
+            //self.showAlert(showText: "Please fill the required fields")
+            print("this should print if empty field exists")
+            
+            showAlert(showText: "Plaese fill all fields")
+            
+            activityInd.stopAnimating()
+            return
+        
+        } else if (registerEmailField.text!.isValidEmail && registerPassField.text!.isValidPassword) {
+            showAlert(showText: "Check your e-mail and password")
+            activityInd.stopAnimating()
+            return
+        }
+        
+        let bodyR = RegisterUser(email: registerEmailField.text!, name: registerNameField.text!, password: registerPassField.text!)
+        let r = Register(endp: "/auth/signup")
+            activityInd.stopAnimating()
+            r.registerReq(bodyR, completion: {result in
+                switch result {
+                case .success(let reg):
+                    print(reg.msg ?? "")
+                    self.performSegue(withIdentifier: "authSegue", sender: self)
+                    
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    self.showAlert(showText: "Something went wrong.. Try again!")
+                    
+                break
+                }
+            })
     }
     
     func fieldCheck(field1: UITextField!, field2: UITextField!, field3: UITextField!) -> Bool{
         
         var check = false
-        if (registerNameField.hasText && registerPassField.hasText && registerPassField.hasText) {
+        if (registerEmailField.hasText && registerNameField.hasText && registerPassField.hasText) {
             check = true
             return check
         } else{
@@ -50,58 +88,6 @@ class RegisterViewController: UIViewController {
             alertController.addAction(action)
             self.present(alertController, animated: true, completion: nil)
         }
-    }
-    
-    
-    @IBAction func registerButton(_ sender: Any) {
-        self.activityIndicator.color = .white
-        self.activityIndicator.startAnimating()
-        
-        let bodyR = RegisterUser(email: registerEmailField.text!, name: registerNameField.text!, password: registerPassField.text!)
-        let r = Register(endp: "/auth/signup")
-        
-        let check = fieldCheck(field1: registerPassField, field2: registerNameField, field3: registerEmailField)
-        if (!check) {
-            //self.showAlert(showText: "Please fill the required fields")
-            print("this should print if empty field exists")
-            
-            let alert = UIAlertController(title: "Error", message: "Fill all required fields", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
-                NSLog("UserError")
-            }))
-            self.present(alert, animated: true, completion: nil)
-            
-            showAlert(showText: "Plaese fill all fields")
-            
-            print("E-mail \(String(describing: registerEmailField)), name \(String(describing: registerNameField)) or password \(String(describing: registerPassField)) is empty")
-            
-            self.activityIndicator.stopAnimating()
-            return
-        
-        } else if (registerEmailField.text!.isValidEmail && registerPassField.text!.isValidPassword) {
-          print("Please check your email \(String(describing: registerEmailField)) and password \(String(describing: registerPassField))")
-            self.showAlert(showText: "Check your e-mail and password")
-            self.activityIndicator.stopAnimating()
-            return
-        } else {
-            self.activityIndicator.stopAnimating()
-            r.registerReq(bodyR, completion: {result in
-                switch result {
-                case .success(let reg):
-                    print(reg.msg ?? "")
-                    self.performSegue(withIdentifier: "authSegue", sender: self)
-                    return
-                    
-                case .failure(let err):
-                    print(err.localizedDescription)
-                    self.showAlert(showText: "Something went wrong.. Try again!")
-                    return
-                }
-            })
-            
-        }
-        
-        
     }
     
     

@@ -713,7 +713,7 @@
                                 <rect key="frame" x="34" y="786" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I6P-ce-sIZ">
                                 <rect key="frame" x="34" y="509" width="307" height="30"/>
@@ -770,10 +770,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="bQB-k2-H7Y"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="gzR-fk-uNM" id="DTi-Sc-1Xp"/>
-                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="JbC-Rq-4AO"/>
-                        <outlet property="registerNameField" destination="30q-uf-An3" id="c3C-hT-BAD"/>
-                        <outlet property="registerPassField" destination="ex8-lI-w3L" id="rcL-Tc-w3b"/>
+                        <outlet property="activityInd" destination="gzR-fk-uNM" id="Ell-48-Sil"/>
+                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="pA5-a0-DMg"/>
+                        <outlet property="registerNameField" destination="30q-uf-An3" id="C4s-2n-1bp"/>
+                        <outlet property="registerPassField" destination="ex8-lI-w3L" id="vU5-RK-sni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
