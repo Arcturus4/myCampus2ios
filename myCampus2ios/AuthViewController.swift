@@ -29,47 +29,44 @@ class AuthViewController: UIViewController {
         let a = Authenticate(endp: "/auth/confirmation")
         
         if (verificationEmail.text == "" || verificationToken.text == "") {
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and token.", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+           showAlert(showText: "Please fill all fields")
             
         } else if (!verificationEmail.text!.isValidEmail) {
-            let alertController = UIAlertController(title: "Error", message: "Please check your email", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+    showAlert(showText: "Please enter a valid e-mail")
         } else {
             a.auth(authBody, completion: {result in
                 switch result {
                 case .success(let reg):
-                    /* DispatchQueue.main.async {
-                     print(self.authToken)
-                     }*/
-                    let alertController = UIAlertController(title: "Message", message: "E-mail verification sent to: \(String(describing: reg.email)).", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
-                        self.performSegue(withIdentifier: "parkSegue", sender: self)
-                    })
-                    alertController.addAction(action)
-                    self.present(alertController, animated: true, completion: nil)
-                    print("Login successful \(String(describing: reg.email))")
+                    self.showAlert(showText: "Registration successful \(String(describing: reg.token))")
                     
                     
                 case .failure(let error):
-                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    self.showAlert(showText: "There was an unexpected error \(error.localizedDescription)")
                     
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
+                break
                 }
             })
             
         }
     }
+    
+    func showAlert(showText: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
+                print("OK button tapped")
+                
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                // self.performSegue(withIdentifier: "authSegue", sender: self)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
