@@ -40,8 +40,8 @@ struct APIClient {
                             print(text)
                             }
                         let body = try JSONDecoder().decode(UserResponse.self, from: data)
-                        print(body.token!)
-                       (UIApplication.shared.delegate as! AppDelegate).token = body.token!
+                        print(body.token)
+                       (UIApplication.shared.delegate as! AppDelegate).token = body.token
                     } catch {
                         print("There was an error parsing data:", error)
                     }

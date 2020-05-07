@@ -9,9 +9,9 @@
 import Foundation
 
 struct UserResponse : Codable {
-    let token : String?
-    let exp : Int?
-    let username : String?
-    let email : String?
-    let roles : Array<String>?
+    let token : String
+    let exp : Int
+    let username : String
+    let email : String
+    let roles : Array<String>
 }

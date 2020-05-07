@@ -13,12 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailText: UITextField!
     @IBOutlet weak var loginPassText: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBSegueAction func PresentLoginToTabBar(_ coder: NSCoder) -> TabBarController? {
-        return <#TabBarController(coder: coder)#>
-    }
+   
     
     var accessToken = (UIApplication.shared.delegate as! AppDelegate).token
     var log : String = ""
@@ -58,9 +55,9 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success(let body):
                     DispatchQueue.main.async {
-                        print(self.accessToken)
+                        print(self.accessToken ?? "")
                     }
-                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+
                     print("Login successful")
                     self.activityIndicator.stopAnimating()
                     print(body.email ?? "")
@@ -81,15 +78,19 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBSegueAction func presentLoginToTabBar(_ coder: NSCoder) -> TabBarController? {
+           return TabBarController(coder: coder)
+       }
     
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "loginSegue" {
             let destVC = segue.destination as? ParkingViewController
             destVC?.loggedIn = "Logged in"
         }
-    }
+    }*/
     
 }
 

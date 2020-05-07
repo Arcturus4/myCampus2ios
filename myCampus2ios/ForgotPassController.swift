@@ -38,7 +38,7 @@ class ForgotPassController: UIViewController {
             f.forgotP(body, completion: {result in
                 switch result {
                 case .success(let reg):
-                    let alertController = UIAlertController(title: "Message", message: reg.value, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Message", message: reg.msg, preferredStyle: .alert)
                     
                     let action = UIAlertAction(title: "OK", style: .cancel, handler: { (acc) -> Void in
                         self.performSegue(withIdentifier: "resetPassSegue", sender: self)

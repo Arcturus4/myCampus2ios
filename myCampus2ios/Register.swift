@@ -40,7 +40,7 @@ struct Register {
                             print(text)
                             }
                         let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
-                        print(body)
+                       // self.showAlert(showText: "\(String(describing: body.msg))")
                     } catch {
                         print("There was an error parsing data:", error)
                     }
@@ -55,4 +55,5 @@ struct Register {
             print(error.localizedDescription)
         }
     }
+
 }
