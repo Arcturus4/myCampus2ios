@@ -47,7 +47,6 @@
                                 </state>
                                 <connections>
                                     <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LlE-60-xrK"/>
-                                    <segue destination="5zl-KV-7Kf" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mIv-TF-x22"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPh-Pe-hC9">
@@ -106,6 +105,7 @@
                         <outlet property="loginButton" destination="VGT-Ew-NG9" id="pq9-uB-ps6"/>
                         <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
                         <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
+                        <segue destination="5zl-KV-7Kf" kind="presentation" identifier="LoginToTabBar" destinationCreationSelector="PresentLoginToTabBar:" id="fgn-Wd-IWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,14 +117,14 @@
             <objects>
                 <viewController storyboardIdentifier="restaurant" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BHS-3O-Qmy" customClass="RestaurantViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rce-jI-CVb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wo4-lR-6rK">
-                                <rect key="frame" x="20" y="64" width="335" height="645"/>
+                                <rect key="frame" x="20" y="20" width="335" height="635"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WQB-qX-NeQ">
-                                        <rect key="frame" x="0.0" y="85" width="335" height="550"/>
+                                        <rect key="frame" x="0.0" y="75" width="335" height="550"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guk-HP-8Fr">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
@@ -328,7 +328,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Utilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-NS-JVw">
-                                        <rect key="frame" x="54" y="30" width="227" height="25"/>
+                                        <rect key="frame" x="54" y="30" width="227" height="15"/>
                                         <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -387,17 +387,17 @@
             <objects>
                 <viewController storyboardIdentifier="parking" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u8x-rE-dsn" customClass="ParkingViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="parking" id="Y30-NZ-uiS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Bi-jI-IVT">
-                                <rect key="frame" x="20" y="64" width="335" height="645"/>
+                                <rect key="frame" x="20" y="20" width="335" height="635"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-gI-XhQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="153.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="151.33333333333334"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeA-D1-xZl" customClass="MBCircularProgressBarView">
-                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <rect key="frame" x="100" y="34.999999999999993" width="135" height="116.33333333333331"/>
                                                 <color key="backgroundColor" name="PrimaryBlue"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -457,10 +457,10 @@
                                         <viewLayoutGuide key="safeArea" id="hcT-w3-DAI"/>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vH-G3-4tO">
-                                        <rect key="frame" x="0.0" y="163.66666666666666" width="335" height="153.99999999999997"/>
+                                        <rect key="frame" x="0.0" y="161.33333333333331" width="335" height="151.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEf-hP-1Ga" customClass="MBCircularProgressBarView">
-                                                <rect key="frame" x="100" y="35.000000000000028" width="135" height="119"/>
+                                                <rect key="frame" x="100" y="34.999999999999993" width="135" height="116.33333333333331"/>
                                                 <color key="backgroundColor" name="PrimaryBlue"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -520,10 +520,10 @@
                                         <viewLayoutGuide key="safeArea" id="2bt-D7-IXe"/>
                                     </view>
                                     <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uz2-Tw-xuV">
-                                        <rect key="frame" x="0.0" y="327.66666666666669" width="335" height="153.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="322.66666666666669" width="335" height="151"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzM-Sj-JCg" customClass="MBCircularProgressBarView">
-                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <rect key="frame" x="100" y="35" width="135" height="116"/>
                                                 <color key="backgroundColor" name="PrimaryBlue"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -583,10 +583,10 @@
                                         <viewLayoutGuide key="safeArea" id="PLz-cg-DFY"/>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewq-8e-Xec" userLabel="ParkingElectric">
-                                        <rect key="frame" x="0.0" y="491.33333333333343" width="335" height="153.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="483.66666666666669" width="335" height="151.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVi-IB-Qjx" customClass="MBCircularProgressBarView">
-                                                <rect key="frame" x="100" y="35.000000000000007" width="135" height="118.66666666666669"/>
+                                                <rect key="frame" x="100" y="34.999999999999936" width="135" height="116.33333333333331"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
@@ -713,7 +713,7 @@
                                 <rect key="frame" x="34" y="786" width="307" height="34"/>
                                 <color key="textColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I6P-ce-sIZ">
                                 <rect key="frame" x="34" y="509" width="307" height="30"/>
@@ -725,7 +725,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="cke-Mq-cP6" eventType="touchUpInside" id="fMw-6p-wx3"/>
-                                    <segue destination="hpy-CE-luq" kind="showDetail" identifier="authSegue" id="eXx-qZ-S1E"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-cp-sac">
@@ -770,10 +769,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="bQB-k2-H7Y"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="gzR-fk-uNM" id="DTi-Sc-1Xp"/>
-                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="JbC-Rq-4AO"/>
-                        <outlet property="registerNameField" destination="30q-uf-An3" id="c3C-hT-BAD"/>
-                        <outlet property="registerPassField" destination="ex8-lI-w3L" id="rcL-Tc-w3b"/>
+                        <outlet property="activityInd" destination="gzR-fk-uNM" id="Ell-48-Sil"/>
+                        <outlet property="registerEmailField" destination="fKv-cp-sac" id="pA5-a0-DMg"/>
+                        <outlet property="registerNameField" destination="30q-uf-An3" id="C4s-2n-1bp"/>
+                        <outlet property="registerPassField" destination="ex8-lI-w3L" id="vU5-RK-sni"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOO-yt-rHN" sceneMemberID="firstResponder"/>
@@ -785,7 +784,7 @@
             <objects>
                 <viewController storyboardIdentifier="settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h0P-6I-BHd" customClass="SettingsViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gOx-RY-z6t">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QOE-bt-1l3">
@@ -845,7 +844,6 @@
                                 </state>
                                 <connections>
                                     <action selector="resetButton:" destination="gYM-NI-Kaz" eventType="touchUpInside" id="BcA-17-pVo"/>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backtoLoginSegue" id="XRM-OM-cV2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Chs-tZ-FLP">
@@ -889,18 +887,19 @@
                         <outlet property="passTextField" destination="y7B-wY-4Rp" id="1na-68-HOT"/>
                         <outlet property="rTextField" destination="axU-Aw-25s" id="JVo-hb-WdD"/>
                         <outlet property="tokenField" destination="V2M-Ei-m6K" id="E4U-k0-WfI"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" destinationCreationSelector="PresentResetToLogin:" id="KIV-pB-RUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-aS-R5c" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1983.2" y="343.5960591133005"/>
+            <point key="canvasLocation" x="-1194" y="166"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="AbE-su-JiY">
             <objects>
                 <viewController storyboardIdentifier="AuthScreen" id="hpy-CE-luq" customClass="AuthViewController" customModule="myCampus2ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="WbE-la-7kT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo_mycampus" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-qo-j3t">
@@ -951,6 +950,7 @@
                     <connections>
                         <outlet property="verificationEmail" destination="PpJ-Uw-XmL" id="CzG-j6-DkQ"/>
                         <outlet property="verificationToken" destination="xrb-OP-5H9" id="HCu-53-AWd"/>
+                        <segue destination="5zl-KV-7Kf" kind="presentation" identifier="AuthToTab" destinationCreationSelector="PresentAuthToTab:" id="C4h-qJ-Ul5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jqy-Xs-1nz" sceneMemberID="firstResponder"/>
@@ -1031,6 +1031,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XRM-OM-cV2"/>
+        <segue reference="C4h-qJ-Ul5"/>
+        <segue reference="KIV-pB-RUq"/>
     </inferredMetricsTieBreakers>
 </document>

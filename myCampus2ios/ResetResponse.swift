@@ -8,9 +8,6 @@
 import Foundation
 
 struct ResetResp : Codable {
-    let value : String?
+    let msg : String?
     
-    init(value: String){
-        self.value = value
-    }
 }

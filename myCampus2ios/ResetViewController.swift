@@ -15,6 +15,10 @@ class ResetViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var tokenField: UITextField!
     
+    var resetted: String = ""
+    
+
+    
     var passMessage : String = ""
     
     override func viewDidLoad() {
@@ -44,7 +48,7 @@ class ResetViewController: UIViewController {
             reset.resetP(body, completion: {result in
                 switch result {
                 case .success(let reg):
-                    let alertController = UIAlertController(title: "Message", message: reg.value, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Message", message: reg.msg, preferredStyle: .alert)
                         
                         let action = UIAlertAction(title: "OK", style: .cancel, handler: { (acc) -> Void in
                             self.performSegue(withIdentifier: "backtoLoginSegue", sender: self)
@@ -66,15 +70,23 @@ class ResetViewController: UIViewController {
         }
     }
     
+    @IBSegueAction func PresentResetToLogin(_ coder: NSCoder) -> LoginViewController? {
+         if let loginVC = LoginViewController(coder: coder){
+                   loginVC.log = resetted
+                   return loginVC
+               }
+        return nil
+    }
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backtoLoginSegue" {
                    let dVC = segue.destination as? LoginViewController
             dVC?.log = "Password reset successful"
                }
         
-    }
+    } */
     
 
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 struct RegisterResponse : Codable {
-    let email: String?
-    let msg : String?
-
+    let email: String
+    let msg : String
 }
+

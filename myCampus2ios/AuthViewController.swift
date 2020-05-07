@@ -22,61 +22,92 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func verifyButton(_ sender: Any) {
-        let authBody = AuthModel(email: verificationEmail.text!, token: verificationToken.text!)
-        let a = Authenticate(endp: "/auth/confirmation")
-        
-        if (verificationEmail.text == "" || verificationToken.text == "") {
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and token.", preferredStyle: .alert)
+        let check = fieldCheck(field1: verificationEmail, field2: verificationToken)
+        if (!check) {
+            //self.showAlert(showText: "Please fill the required fields")
+            print("this should print if empty field exists")
             
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            showAlert(showText: "Plaese fill all the fields")
             
         } else if (!verificationEmail.text!.isValidEmail) {
-            let alertController = UIAlertController(title: "Error", message: "Please check your email", preferredStyle: .alert)
-            
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            showAlert(showText: "Check your e-mail")
         } else {
-            a.auth(authBody, completion: {result in
-                switch result {
-                case .success(let reg):
-                    /* DispatchQueue.main.async {
-                     print(self.authToken)
-                     }*/
-                    let alertController = UIAlertController(title: "Message", message: "E-mail verification sent to: \(String(describing: reg.email)).", preferredStyle: .alert)
+            let authBody = AuthModel(email: verificationEmail.text!, token: verificationToken.text!)
+            do {
+                let myURL = URL(string: "https://mycampus-server.karage.fi/auth/confirmation")
+                var request = URLRequest(url: myURL!)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.httpBody = try JSONEncoder().encode(authBody)
+                // print(request.description)
+                
+                let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+                    if let data = data {// check for http errors
+                        do {
+                            if let text = String(bytes: data, encoding: .utf8){
+                                print(text)
+                            }
+                            let body = try JSONDecoder().decode(UserResponse.self, from: data)
+                            self.showAlert(showText: "You have registered successfully: \(body.username)")
+                        } catch {
+                            print("There was an error parsing data:", error)
+                            self.showAlert(showText: "Something failed.. Try again!")
+                        }
+                    }
+                    if let resp = response as? HTTPURLResponse {
+                        print(resp.self)
+                    }
                     
-                    let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ -> Void in
-                        self.performSegue(withIdentifier: "parkSegue", sender: self)
-                    })
-                    alertController.addAction(action)
-                    self.present(alertController, animated: true, completion: nil)
-                    print("Login successful \(String(describing: reg.email))")
-                    
-                    
-                case .failure(let error):
-                    let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(defaultAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
                 }
-            })
+                task.resume()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func fieldCheck(field1: UITextField!, field2: UITextField!) -> Bool{
+        
+        var check = false
+        if (verificationEmail.hasText && verificationToken.hasText) {
+            check = true
+            return check
+        } else{
+            return check
+        }
+    }
+    
+    func showAlert(showText: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
             
+            let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
+                print("OK button tapped")
+                self.performSegue(withIdentifier: "AuthToTab", sender: self)
+                
+                /*DispatchQueue.main.async {
+                 self.dismiss(animated: true, completion: nil)
+                 }*/
+                // self.performSegue(withIdentifier: "authSegue", sender: self)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "parkSegue" {
-            let dVC = segue.destination as? AuthViewController
-            dVC?.verification = "Registration successfull"
-        }
-    }
-    
-    
 }
+
+/* @IBSegueAction func PresentAuthToTab(_ coder: NSCoder) -> TabBarController? {
+ return TabBarController(coder: coder)
+ } */
+
+
+
+/* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ if segue.identifier == "parkSegue" {
+ let dVC = segue.destination as? AuthViewController
+ dVC?.verification = "Registration successfull"
+ }
+ }*/
+

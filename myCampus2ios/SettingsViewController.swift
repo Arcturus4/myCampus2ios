@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, TokenDelegate {
     func setToken(token: String) {
     }
     
-    
+    // Fetching the token from AppDelegate
     var tokenPayload = (UIApplication.shared.delegate as! AppDelegate).token
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController, TokenDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
+    // Removing the token after logout button is pressed
     @IBAction func buttonLogOut(_ sender: Any) {
         tokenPayload?.removeAll()
          self.performSegue(withIdentifier: "logoutSegue", sender: self)
