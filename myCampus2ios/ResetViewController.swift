@@ -15,6 +15,10 @@ class ResetViewController: UIViewController {
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var tokenField: UITextField!
     
+    @IBSegueAction func PresentResetToLogin(_ coder: NSCoder) -> LoginViewController? {
+        return <#LoginViewController(coder: coder)#>
+    }
+    
     var passMessage : String = ""
     
     override func viewDidLoad() {

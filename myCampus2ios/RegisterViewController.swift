@@ -13,6 +13,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerPassField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    @IBSegueAction func PresentRegisterToAuth(_ coder: NSCoder) -> AuthViewController? {
+        return AuthViewController(coder: coder)
+    }
+    
     var logged : String = ""
     var authToken = (UIApplication.shared.delegate as! AppDelegate).token
     

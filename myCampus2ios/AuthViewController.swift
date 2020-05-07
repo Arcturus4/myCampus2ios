@@ -13,6 +13,9 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var verificationEmail: UITextField!
     @IBOutlet weak var verificationToken: UITextField!
     
+    @IBSegueAction func PresentAuthToTab(_ coder: NSCoder) -> TabBarController? {
+        return TabBarController(coder: coder)
+    }
     var verification : String = ""
     
     override func viewDidLoad() {
