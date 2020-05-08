@@ -60,9 +60,11 @@ class RegisterViewController: UIViewController {
                             }
                             let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
                             self.showAlert(showText: "\(body.msg)")
+                            let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthScreen")
+                            self.present(authVC!, animated: true, completion: nil)
                         } catch {
                             print("There was an error parsing data:", error)
-                            self.showAlert(showText: "Something failed.. Try again!")
+                            self.showAlert(showText: "Failed to send verification e-mail.. Try again!")
                         }
                     }
                     if let resp = response as? HTTPURLResponse {
@@ -94,8 +96,6 @@ class RegisterViewController: UIViewController {
             
             let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
                 print("OK button tapped")
-                let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthScreen")
-                self.present(authVC!, animated: true, completion: nil)
                 
                 /*DispatchQueue.main.async {
                  self.dismiss(animated: true, completion: nil)
