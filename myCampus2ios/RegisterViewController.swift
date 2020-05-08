@@ -59,9 +59,8 @@ class RegisterViewController: UIViewController {
                                 print(text)
                             }
                             let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
-                            self.showAlert(showText: "\(body.msg)")
-                            let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthScreen")
-                            self.present(authVC!, animated: true, completion: nil)
+                            self.showAlertAuth(showText: "\(body.msg)")
+                            
                         } catch {
                             print("There was an error parsing data:", error)
                             self.showAlert(showText: "Failed to send verification e-mail.. Try again!")
@@ -96,6 +95,25 @@ class RegisterViewController: UIViewController {
             
             let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
                 print("OK button tapped")
+                
+                /*DispatchQueue.main.async {
+                 self.dismiss(animated: true, completion: nil)
+                 }*/
+                // self.performSegue(withIdentifier: "authSegue", sender: self)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func showAlertAuth(showText: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
+                print("OK button tapped")
+                let authVC = self.storyboard?.instantiateViewController(withIdentifier: "AuthScreen")
+                self.present(authVC!, animated: true, completion: nil)
                 
                 /*DispatchQueue.main.async {
                  self.dismiss(animated: true, completion: nil)

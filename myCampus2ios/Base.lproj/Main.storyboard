@@ -891,7 +891,7 @@
                         <outlet property="passTextField" destination="y7B-wY-4Rp" id="1na-68-HOT"/>
                         <outlet property="rTextField" destination="axU-Aw-25s" id="JVo-hb-WdD"/>
                         <outlet property="tokenField" destination="V2M-Ei-m6K" id="E4U-k0-WfI"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" destinationCreationSelector="PresentResetToLogin:" id="KIV-pB-RUq"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="resetLogin" destinationCreationSelector="PresentResetToLogin:" id="KIV-pB-RUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-aS-R5c" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@
 import Foundation
 
 struct forgotPassModel: Codable {
-    let email: String?
+    let email: String
     
     init(email: String) {
         self.email = email
