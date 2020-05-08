@@ -58,7 +58,8 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cke-Mq-cP6" kind="showDetail" id="84U-Ap-HSA"/>
+                                    <action selector="registerB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofS-k2-JEL"/>
+                                    <segue destination="cke-Mq-cP6" kind="showDetail" identifier="registerSegue" id="84U-Ap-HSA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xdL-wM-duP">
@@ -70,7 +71,8 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jv0-Na-xSV" kind="showDetail" id="Xe3-Sy-Otx"/>
+                                    <action selector="forgotB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2q-FR-kvD"/>
+                                    <segue destination="Jv0-Na-xSV" kind="showDetail" identifier="forgotPassSegue" id="Xe3-Sy-Otx"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KRO-Ib-pwq">
@@ -102,10 +104,12 @@
                     <navigationItem key="navigationItem" id="6iV-fu-eoZ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="KRO-Ib-pwq" id="sxP-D0-s2G"/>
-                        <outlet property="loginButton" destination="VGT-Ew-NG9" id="pq9-uB-ps6"/>
+                        <outlet property="forgB" destination="xdL-wM-duP" id="jFh-t7-vjD"/>
+                        <outlet property="logB" destination="VGT-Ew-NG9" id="0qP-cL-ZSv"/>
                         <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
                         <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
-                        <segue destination="5zl-KV-7Kf" kind="presentation" identifier="LoginToTabBar" destinationCreationSelector="PresentLoginToTabBar:" id="fgn-Wd-IWv"/>
+                        <outlet property="regB" destination="yPh-Pe-hC9" id="vcn-Gz-hPH"/>
+                        <segue destination="5zl-KV-7Kf" kind="showDetail" identifier="logintoTab" destinationCreationSelector="PresentLoginToTabBar:" id="fgn-Wd-IWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -800,15 +804,33 @@
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="TT2-Ec-nla"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXv-jz-7AT">
+                                <rect key="frame" x="34" y="287" width="307" height="34"/>
+                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                                <accessibility key="accessibilityConfiguration" identifier="UserInfo" label="UserInfo">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="trailing" secondItem="QOE-bt-1l3" secondAttribute="trailing" id="Cd4-0T-2sJ"/>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="top" secondItem="YFa-u3-6Rs" secondAttribute="top" constant="287" id="TLV-1P-jU6"/>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="leading" secondItem="QOE-bt-1l3" secondAttribute="leading" id="icF-mC-NOT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
+                    <connections>
+                        <outlet property="loggedAs" destination="dXv-jz-7AT" id="vhI-4F-pV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-2y-MfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-561"/>
+            <point key="canvasLocation" x="821.60000000000002" y="-561.57635467980299"/>
         </scene>
         <!--Reset View Controller-->
         <scene sceneID="J2n-3D-AcQ">
@@ -887,7 +909,7 @@
                         <outlet property="passTextField" destination="y7B-wY-4Rp" id="1na-68-HOT"/>
                         <outlet property="rTextField" destination="axU-Aw-25s" id="JVo-hb-WdD"/>
                         <outlet property="tokenField" destination="V2M-Ei-m6K" id="E4U-k0-WfI"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" destinationCreationSelector="PresentResetToLogin:" id="KIV-pB-RUq"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="resetLogin" destinationCreationSelector="PresentResetToLogin:" id="KIV-pB-RUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM4-aS-R5c" sceneMemberID="firstResponder"/>
@@ -1031,7 +1053,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="C4h-qJ-Ul5"/>
-        <segue reference="KIV-pB-RUq"/>
+        <segue reference="fgn-Wd-IWv"/>
+        <segue reference="TT2-Ec-nla"/>
     </inferredMetricsTieBreakers>
 </document>

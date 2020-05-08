@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 /*enum ClientError: Error {
-    case responseError
-    case jsonError
-    case jsonDecodeError
-}*/
+ case responseError
+ case jsonError
+ case jsonDecodeError
+ }*/
 
 struct APIClient {
     let baseURL : URL
@@ -32,7 +32,7 @@ struct APIClient {
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONEncoder().encode(userModel)
-           // print(request.description)
+            // print(request.description)
             
             // Here, we are handling the data response and possible errors:
             let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
@@ -40,11 +40,13 @@ struct APIClient {
                     do {
                         if let text = String(bytes: data, encoding: .utf8){
                             print(text)
-                            }
+                        }
                         // De
                         let body = try JSONDecoder().decode(UserResponse.self, from: data)
                         print(body.token)
-                       (UIApplication.shared.delegate as! AppDelegate).token = body.token
+                        DispatchQueue.main.async {
+                            (UIApplication.shared.delegate as! AppDelegate).token = body.token
+                        }
                     } catch {
                         print("There was an error parsing data:", error)
                     }
@@ -52,13 +54,13 @@ struct APIClient {
                 if let resp = response as? HTTPURLResponse {
                     print(resp.statusCode)
                 }
-
+                
             }
             // Continuing the URLSession task
             task.resume()
             // Handling the errors, if the request was unsuccessful
         } catch {
-            print(error.localizedDescription)
+            print(Error.self)
         }
     }
 }

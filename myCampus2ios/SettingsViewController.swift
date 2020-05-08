@@ -11,11 +11,16 @@ import UIKit
 class SettingsViewController: UIViewController, TokenDelegate {
     func setToken(token: String) {
     }
+    @IBOutlet weak var loggedAs: UITextField!
     
     // Fetching the token from AppDelegate
     var tokenPayload = (UIApplication.shared.delegate as! AppDelegate).token
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user = (UIApplication.shared.delegate as! AppDelegate).user
+        
+        loggedAs.text = "Logged in as: \(user ?? "no user data") "
         
         // Do any additional setup after loading the view.
     }

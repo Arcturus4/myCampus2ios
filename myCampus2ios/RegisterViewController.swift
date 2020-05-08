@@ -58,11 +58,13 @@ class RegisterViewController: UIViewController {
                             if let text = String(bytes: data, encoding: .utf8){
                                 print(text)
                             }
+                            (UIApplication.shared.delegate as! AppDelegate).user = self.registerEmailField.text!
                             let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
-                            self.showAlert(showText: "\(body.msg)")
+                            self.showAlertAuth(showText: "\(body.msg)")
+                            
                         } catch {
                             print("There was an error parsing data:", error)
-                            self.showAlert(showText: "Something failed.. Try again!")
+                            self.showAlert(showText: "Failed to send verification e-mail.. Try again!")
                         }
                     }
                     if let resp = response as? HTTPURLResponse {
@@ -89,6 +91,23 @@ class RegisterViewController: UIViewController {
     }
     
     func showAlert(showText: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "OK", style: .cancel) { (action: UIAlertAction!) in
+                print("OK button tapped")
+                
+                /*DispatchQueue.main.async {
+                 self.dismiss(animated: true, completion: nil)
+                 }*/
+                // self.performSegue(withIdentifier: "authSegue", sender: self)
+            }
+            alertController.addAction(action)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func showAlertAuth(showText: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: "Message", message: showText, preferredStyle: .alert)
             

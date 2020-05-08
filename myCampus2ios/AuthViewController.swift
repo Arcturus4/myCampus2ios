@@ -48,7 +48,7 @@ class AuthViewController: UIViewController {
                                 print(text)
                             }
                             let body = try JSONDecoder().decode(UserResponse.self, from: data)
-                            self.showAlert(showText: "You have registered successfully: \(body.username)")
+                            self.showAlert(showText: "You have registered successfully: \n  \(body.username)")
                         } catch {
                             print("There was an error parsing data:", error)
                             self.showAlert(showText: "Something failed.. Try again!")
