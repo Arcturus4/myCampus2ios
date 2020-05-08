@@ -58,7 +58,8 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cke-Mq-cP6" kind="showDetail" id="84U-Ap-HSA"/>
+                                    <action selector="registerB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofS-k2-JEL"/>
+                                    <segue destination="cke-Mq-cP6" kind="showDetail" identifier="registerSegue" id="84U-Ap-HSA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xdL-wM-duP">
@@ -70,7 +71,8 @@
                                     <color key="titleShadowColor" red="0.0" green="0.051500358400000001" blue="0.49105408029999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jv0-Na-xSV" kind="showDetail" id="Xe3-Sy-Otx"/>
+                                    <action selector="forgotB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2q-FR-kvD"/>
+                                    <segue destination="Jv0-Na-xSV" kind="showDetail" identifier="forgotPassSegue" id="Xe3-Sy-Otx"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="KRO-Ib-pwq">
@@ -102,8 +104,11 @@
                     <navigationItem key="navigationItem" id="6iV-fu-eoZ"/>
                     <connections>
                         <outlet property="activityIndicator" destination="KRO-Ib-pwq" id="sxP-D0-s2G"/>
+                        <outlet property="forgB" destination="xdL-wM-duP" id="jFh-t7-vjD"/>
+                        <outlet property="logB" destination="VGT-Ew-NG9" id="0qP-cL-ZSv"/>
                         <outlet property="loginEmailText" destination="4wO-se-mpx" id="f1q-Ar-Bih"/>
                         <outlet property="loginPassText" destination="b0s-jq-UcO" id="xU8-jA-KfB"/>
+                        <outlet property="regB" destination="yPh-Pe-hC9" id="vcn-Gz-hPH"/>
                         <segue destination="5zl-KV-7Kf" kind="showDetail" identifier="logintoTab" destinationCreationSelector="PresentLoginToTabBar:" id="fgn-Wd-IWv"/>
                     </connections>
                 </viewController>

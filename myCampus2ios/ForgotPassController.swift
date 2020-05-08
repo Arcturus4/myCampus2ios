@@ -11,6 +11,9 @@ import UIKit
 class ForgotPassController: UIViewController {
     
     @IBOutlet weak var forgotEmailField: UITextField!
+    
+    var forgotCheck : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

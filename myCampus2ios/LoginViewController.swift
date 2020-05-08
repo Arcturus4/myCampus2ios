@@ -13,7 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginEmailText: UITextField!
     @IBOutlet weak var loginPassText: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet weak var logB: UIButton!
+    @IBOutlet weak var regB: UIButton!
+    @IBOutlet weak var forgB: UIButton!
     
     
     var accessToken = (UIApplication.shared.delegate as! AppDelegate).token
@@ -125,7 +127,21 @@ class LoginViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
-        
+    
+    @IBAction func registerB(_ sender: Any) {
+        print("Forgot button clicked")
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "registerSegue", sender: self)
+        }
+    }
+    
+    @IBAction func forgotB(_ sender: Any) {
+        print("Forgot button clicked")
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "registerSegue", sender: self)
+        }
+    }
+    
         /* @IBSegueAction func presentLoginToTabBar(_ coder: NSCoder) -> TabBarController? {
          return TabBarController(coder: coder)
          } */
@@ -134,8 +150,17 @@ class LoginViewController: UIViewController {
         
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let destVC = segue.destination as! TabBarController
-            destVC.loggedIn = "Logged in"
+            if logB.isSelected {
+                 let destVC = segue.destination as! ParkingViewController
+                           destVC.loginT = "Logged in"
+            } else if regB.isSelected {
+                let regVC = segue.destination as! RegisterViewController
+                regVC.logged = "Register"
+            } else if forgB.isSelected {
+                let forgVC = segue.destination as! ForgotPassController
+                forgVC.forgotCheck = "Forgot password reached"
+            }
+            return
         }
         
     }
