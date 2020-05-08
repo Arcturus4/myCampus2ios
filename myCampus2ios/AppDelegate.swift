@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var token: String? = "" {didSet{tokenDelegate?.setToken(token: token ?? "")}}
     
+    var user: String? = ""
+    
     var tokenDelegate: TokenDelegate?
     
     var window: UIWindow?

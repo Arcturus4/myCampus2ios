@@ -66,6 +66,7 @@ class LoginViewController: UIViewController {
                                 let body = try JSONDecoder().decode(UserResponse.self, from: data)
                                 self.showAlertLogin(showText: "Welcome to myCampus \n   \(body.username)!")
                                 DispatchQueue.main.async {
+                                    (UIApplication.shared.delegate as! AppDelegate).user = self.loginEmailText.text!
                                     self.activityIndicator.stopAnimating()
                                     (UIApplication.shared.delegate as! AppDelegate).token = body.token
                                 }
