@@ -804,17 +804,23 @@
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="TT2-Ec-nla"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXv-jz-7AT">
-                                <rect key="frame" x="34" y="432" width="307" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXv-jz-7AT">
+                                <rect key="frame" x="34" y="287" width="307" height="34"/>
+                                <color key="backgroundColor" name="PrimaryDarkBlue"/>
                                 <accessibility key="accessibilityConfiguration" identifier="UserInfo" label="UserInfo">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
+                        <constraints>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="trailing" secondItem="QOE-bt-1l3" secondAttribute="trailing" id="Cd4-0T-2sJ"/>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="top" secondItem="YFa-u3-6Rs" secondAttribute="top" constant="287" id="TLV-1P-jU6"/>
+                            <constraint firstItem="dXv-jz-7AT" firstAttribute="leading" secondItem="QOE-bt-1l3" secondAttribute="leading" id="icF-mC-NOT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
@@ -1048,6 +1054,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fgn-Wd-IWv"/>
-        <segue reference="KIV-pB-RUq"/>
+        <segue reference="TT2-Ec-nla"/>
     </inferredMetricsTieBreakers>
 </document>
