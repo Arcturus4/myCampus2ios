@@ -58,6 +58,7 @@ class RegisterViewController: UIViewController {
                             if let text = String(bytes: data, encoding: .utf8){
                                 print(text)
                             }
+                            (UIApplication.shared.delegate as! AppDelegate).user = self.registerEmailField.text!
                             let body = try JSONDecoder().decode(RegisterResponse.self, from: data)
                             self.showAlertAuth(showText: "\(body.msg)")
                             

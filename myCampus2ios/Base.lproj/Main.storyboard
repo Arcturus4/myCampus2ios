@@ -804,15 +804,27 @@
                                     <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logoutSegue" id="TT2-Ec-nla"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXv-jz-7AT">
+                                <rect key="frame" x="34" y="432" width="307" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="UserInfo" label="UserInfo">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="PrimaryDarkBlue"/>
                         <viewLayoutGuide key="safeArea" id="YFa-u3-6Rs"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="wrench.fill" catalog="system" id="1ox-bD-iy6"/>
+                    <connections>
+                        <outlet property="loggedAs" destination="dXv-jz-7AT" id="vhI-4F-pV0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-2y-MfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="-561"/>
+            <point key="canvasLocation" x="821.60000000000002" y="-561.57635467980299"/>
         </scene>
         <!--Reset View Controller-->
         <scene sceneID="J2n-3D-AcQ">
